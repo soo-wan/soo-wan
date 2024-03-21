@@ -34,9 +34,9 @@ public class Application1 {
         * '++num '
         * */
         int firstNum = 20;
-        int result = firstNum++ * 3; // ★★★ 다른 연산을 먼저 처리하고 난 뒤 마지막에 firstNum을 증가 처리함
-        System.out.println("result = " + result); //60
-        System.out.println("result = " + firstNum); //21
+        int result = firstNum++ * 3; // ★★★ 다른 연산을 먼저 처리하고 난 뒤 result값 저장이후 마지막에 firstNum을 증가 처리함
+        System.out.println("중요 result = " + result); //60
+        System.out.println("중요 result = " + firstNum); //21
 
         int secondNum = 20;
         int result1 = ++secondNum * 3; // 먼저 더하기 처리하고 다른 연산 처리함

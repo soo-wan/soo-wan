@@ -15,7 +15,7 @@ public class Application1 {
         int num = 12;
         System.out.println("num : " + num);
 
-        //3증가시
+        //3 증가시
             num = num + 3; // 대입연산자의 오른쪽은 값 왼쪽에는 공간의 의미다.
         System.out.println("num : " + num); //15
             num += 3; // num = num + 3과 같은 의미.
@@ -32,10 +32,8 @@ public class Application1 {
         /* 주의사항
         * 산술 복합 대입연산자의 작성 순서에 주의해야한다.
         * */
-
         num =- 5;
         System.out.println("num : " + num); //-5
-
 
     }
 }

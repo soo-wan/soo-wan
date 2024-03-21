@@ -34,13 +34,13 @@ public class Application2 {
         System.out.println("영문자 y인지 확인 : " +(ch3 == 'Y' || ch3 == 'y'));
 
         /* 4. 영문자인지 확인 */
-        /* A : 65, Z :90, a:97, z:122(중간의 91~96까지는 영문자가 아님) */
+        /* A : 65, Z :90, a:97, z:122 (중간의 91~96까지는 영문자가 아님) */
         char ch5 = 'f';
-        System.out.println("영문자인지 확인 : " + ((ch5 >= 'A' && ch5 <= 'z') || (ch5 >= 'a' && ch5 <= 'z')));
+        System.out.println("영문자인지 확인 : " + ((ch5 >= 'A' && ch5 <= 'Z') || (ch5 >= 'a' && ch5 <= 'z')));
         System.out.println("영문자인지 확인 : " + ((ch5 >= 65 && ch5 <= 90) || (ch5 >= 97 && ch5 <= 122)));
 
         char ch6 = 24;
-        System.out.println("영문자인지 확인 : " + ((ch6 >= 'A' && ch6 <= 'z') || (ch6 >= 'a' && ch6 <= 'z')));
+        System.out.println("영문자인지 확인 : " + ((ch6 >= 'A' && ch6 <= 'Z') || (ch6 >= 'a' && ch6 <= 'z')));
         System.out.println("영문자인지 확인 : " + ((ch6 >= 65 && ch6 <= 90) || (ch6 >= 97 && ch6 <= 122)));
     }
 }

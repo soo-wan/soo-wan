@@ -5,6 +5,7 @@ public class Application01 {
         int num1 = 10;
         int num2 = 20;
         Calculator calc = new Calculator();
+        calc.checkMethod();
         System.out.println("10과 20의 합 : " + calc.sumTwoNumber(10,20));
         System.out.println("10과 5의 차 : " +calc.minusTwoNumber(10,5));
         System.out.println("10과 5의 곱 : " +calc.multiTwoNumber(10,5));

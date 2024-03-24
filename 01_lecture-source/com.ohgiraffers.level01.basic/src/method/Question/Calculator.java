@@ -12,7 +12,7 @@ public class Calculator {
          */
     }
     public void checkMethod() {
-
+        System.out.println("메소드 호출 확인");
     }
     public int sumTwoNumber(int a, int b){
         return a+b;

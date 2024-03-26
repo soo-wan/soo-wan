@@ -29,7 +29,7 @@ public class B_while {
 
         /*
         * charAt() : 문자열에서 인덱스에 해당하는 문자를 char형으로 변환하는 기능
-        * length : String클래스의 메소드로 문자열의 길이를 int형으로 변환한다
+        * length : String 클래스의 메소드로 문자열의 길이를 int형으로 변환한다
         * index는 0부터 시작하고 마지막 인덱스는 항상 길이보다 한 개 작은 숫자를 가진다.
         * */
         System.out.println("========== for문 ========");

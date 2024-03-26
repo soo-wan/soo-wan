@@ -11,7 +11,7 @@ public class Application01 {
             System.out.println(x+=2); // x= 5 , x=3+2 --
             System.out.println( !('A' <= c && c <='Z') ); // false , true & true의 not이니 false --
             System.out.println('C'-c); // 2, (C-A) -> 67-65 --
-            System.out.println('5'-'0'); //5 , (5-0) 문자 뺄셈..? --??
+            System.out.println('5'-'0'); //5 , (53-48) 아스키 코드 뺄셈 --
             System.out.println(c+1); // 66 , A(65)+1(정수) = 66
             System.out.println(++c); // B , A에서 1증가 --
             System.out.println(c++); // B , char C출력(위에서 B), 출력후 나중에 C --

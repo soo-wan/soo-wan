@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* style 안에서는 주석 양식 다름 */
+        #div2{
+            width:300px;
+            height: 200px;
+            background: yellowgreen;
+        }
+        /* id가 "div2" 인 태그(태그종류 무관)에 { }안의 CSS 내용을 적용하겠습니다. */
+        #div3{
+            width:400px;
+            height: 200px;
+            background: magenta;
+        }
+    </style>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <!-- 
+        * CSS(cascading style sheets)
+        -Tag 안에서 지정되던 옵션을 포함, 다양한 옵션과 꾸밈요소를 적용할때 사용합니다.
+        -Tag 안에 직접 기술하거나, 별도의 시트에 작성후 name, id 등으로 연결 적용하는 스타일 정의 구문입니다.
+     -->
+     <!-- 꾸밈 적용방식의 변화 -->
+     <img src="images/daum.png" width="200" height="100"><br> <!--CSS 적용 X-->
+     <img src="images/daum.png" style="width: 200px;" height="100px;"><br> <!--CSS 적용 O-->
+     <!-- 스타일 속성으로 width height 등과 같은 내용을 표시할때는 (:)과 함께 반드시 px 단위를 붙여야 합니다. px 단위를 쓰지 않으면 0이 되거나 전혀 적용이 되지 않은 상태가 됩니다.-->
+     
+     <!-- 스타일을 지정하는 방법 #1 -->
+     <!-- 태그안에 style 속성을 추가하고 그 값으로 각 스타일들을 한번에 지정합니다. -->
+     <div style="width: 300px; height: 100px; background: yellow ;border:2px solid red" ></div>
+     <!-- background : 배경색 border:2px solid red; 2px 굵기의 빨간색 실선을 표시 -->
+     <br>
+
+     <!-- 스타일을 지정하는 방법 #2 
+        적용할 태그에 id 또는 class를 지정하고 그 이름 이용하여 별도의 공간에 스타일을 별도의 공간에 지정합니다.
+    -->
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div2"></div>
+    <div id="div3" style="width:100px; height:100px; margin:20px"></div>
+
+    <!-- 스타일을 지정하는 방법 #3 
+        별도의 파일에 css내용을 기술하고 그 파일을 연결해서 사용. head 태그 안에 link라는 태그를 이용해서 파일을 연결합니다.
+    -->
+    <div id="div4"></div>
+    <div id="div5"></div>
+</body>
+</html>

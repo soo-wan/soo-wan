@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 같은 태그들을 그룹화 하되 서로 인접되어 있지 않을때 사용 */
+         h1:first-child{color: red;}
+         h1:last-of-type{color: blue;}
+         h2:first-of-type{color: green;}
+         h3:nth-of-type(2n){color: orange;}
+         h1:nth-of-type(2){color: yellow;}
+    </style>
+</head>
+<body>
+    <h1>header - 1</h1>
+    <h2>header - 2</h2>
+    <h3>header - 3</h3>
+    <h3>header - 3</h3>
+    <h2>header - 2</h2>
+    <h1>header - 1</h1>
+    <h1>header - 1</h1>
+    <h3>header - 3</h3>
+    <h3>header - 3</h3>
+</body>
+</html>

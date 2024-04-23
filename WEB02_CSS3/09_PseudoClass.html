@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 일반 구조 선택자 
+            -CSS3부터 지원하는 선택자
+            -일반적으로 후손선택자(공백,>)와 병행해서 많이 사용
+            -같은 이름의 태그들 또는 클래스 이름들을 대상으로 하는 선택자
+            -종류
+                :first~child -> 첫번째 위치하는 자손을 선택
+                :last-child -> 마지막에 위치하는 자손을 선택
+                :nth-child(n) -> n번째 위치하는 자손을 선택
+        */
+        /* li:first-child{background: magenta;}
+        li:last-child{background: yellowgreen;}
+
+        ul li:nth-child(2){background: yellow;}
+        ul li:nth-child(3){background: orange;}
+        ul li:nth-child(4){background: yellow;}
+        ul li:nth-child(5){background: orange;}
+         */
+
+         /* ul li:nth-child(2n+1){background: orange;}
+         ul li:nth-child(2n){background: yellow;} */
+
+         ul{list-style:none; margin: 0; padding: 0; border:5px solid red;} 
+         /*  display:block; 모지 이건 */
+         /* padding : 글자와 border 사이의 공간(top, bottom, left, right) */
+
+         li{border:1px solid black; float: left; width: 100px; text-align: center; height: 50px; line-height: 50px; border: 5px solid #777777}
+         /* text-align : 글자들의 좌우정렬 */
+         /* line-height : 줄간격, 라인의 높이. 한 라인의 높이는 둘러싼 요소의 높이 맞추면 글자는 자동 위아래 가운데 맞춤이 됩니다. */
+
+         li:nth-child(2n+1){background: orange;}
+         li:nth-child(2n){background: yellow;}
+         li:first-child{border-radius: 25px 0 0 25px;}
+         li:last-child{border-radius: 0 25px 25px 0;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>회사소개</li>
+        <li>사업</li>
+        <li>조직도</li>
+        <li>게시판</li>
+        <li>고객지원</li>
+        <li>사이트맵</li>
+    </ul>
+    
+</body>
+</html>

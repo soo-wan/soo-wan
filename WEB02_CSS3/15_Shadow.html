@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div{width: 600px; margin-bottom: 20px; padding: 10px 30px; background: yellow; border:1px solid black;}
+        /* margin은 네모 간격 padding은 네모안에 앞에는 위아래간격, 뒤에는 양옆 간격 */
+        .a{box-shadow: 5px 5px;}
+        /* 첫번째와 두번째 요소는 좌우 상하 그림자 크기, 양수는 오른쪽 아래로, 음수는 왼쪽 위로 */
+
+        .b{box-shadow: 5px 5px 5px;}
+        /* 세번째 요소는 번짐 정도 */
+
+        .c{box-shadow: 5px 5px 5px 5px;}
+        /* 네번째 요소는 그림자 확장 */
+
+        .d{box-shadow: 5px 5px 5px 5px orange;}
+        /*  다섯번째 요소는 색깔 */
+
+        /* shadow는 위의 박스에 적용하는 box-shadow가 있고, 글자에 적용하는 text-shadow가 있으며, 둘의 사용방법은 똑같습니다. */
+    </style>
+</head>
+<body>
+    <div class="a"><p>box-shadow : 5px 5px</p></div>
+    <div class="b"><p>box-shadow : 5px 5px 5px</p></div>
+    <div class="c"><p>box-shadow : 5px 5px 5px 5px</p></div>
+    <div class="d"><p>box-shadow : 5px 5px 5px 5px orange</p></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="hobby">취미 : </label>
+        <input type="text" id="hobby">
+    </form>
+    <!-- 
+        입력란을 위한 제목을 표시할 목적으로 사용하는 태그
+        label 태그를 쓰지 않고 제목을 쓴것과 크게 차이는 없지만
+        입력란의 id와 함께 사용되어서, 형식상 어느 입력란을 위한 제목(label)
+        인지만 인지하는 기능일뿐 사용하지 않는다고해서 생기는 오류나 혼란은 없습니다.
+     -->
+     <br><hr><br>
+     
+     <!-- FieldSet -->
+     <form>
+        <!-- 많이 사용되는 곳 : 회원가입 화면에서, 필수입력사항들의 그룹과, 일반 입력사항 그룹의 경계를 나타낼때 -->
+            <fieldset>
+                <legend>로그인</legend>
+                    <label for="id">아이디</label>
+                    <input type="text" id="id"><br>
+                    <label for="pwd">비밀번호</label>
+                    <input type="password" id="pwd"><br>
+                    <input type="submit" value="로그인">
+            </fieldset>
+     </form>
+</body>
+</html>

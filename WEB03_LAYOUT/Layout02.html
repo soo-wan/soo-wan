@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+        }
+        .base{
+            position:relative;
+            width: 100%;
+            border:1px solid black;
+            height: 400px;
+            top:100px;
+        }
+        .box1{
+            position: absolute;
+            background-color: yellow;
+            width: 150px;    
+            height: 350px;
+            border: 1px solid black;
+            top: 5%;
+            left: 20%;
+            /* box-shadow: -5px 5px 1px; */
+            box-shadow: -5px 5px 1px 1px rgba(0, 0, 0, 0.5);
+            /* filter: blur(1px); */
+        }
+        .box2{
+            position: absolute;
+            background-color: orange;
+            width: 150px;    
+            height: 350px; 
+            border: 1px solid black;
+            top: 5%;
+            left: 30%;
+            box-shadow: -5px 5px 1px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .box3{
+            position: absolute;
+            background-color: yellow;
+            width: 70%;    
+            height: 350px; 
+            border: 1px solid black;
+            top: 5%;
+            left: 39%;
+            box-shadow: -5px 5px 1px 1px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="base">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

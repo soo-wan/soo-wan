@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .base1{
+            position:relative;
+            width: 100%;   
+            height: 100px;
+            border:1px solid black;
+        }
+        .title{
+            position:relative;
+            width:250px;
+            height:100px;
+            margin:0 auto;
+            border:1px solid red;
+            font-size : 2em;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            line-height: 130px;
+        }
+        /* ---------------------------- */
+
+        .base2{
+            position:relative;
+            width: 100%;   
+            height: 100px;
+            border:1px solid black;
+        }
+        .text{
+            position:relative;
+            width:450px;
+            height: 100px;
+            margin: 0 auto; 
+            /* 가운데 정렬 */
+            border:1px solid black;
+        }
+        /* --------------------------- */
+        .base3{
+            position:relative;
+            width: 100%;   
+            height: 500px;
+            border:1px solid black;
+        }
+        .view{
+            position:relative;
+            width:1100px;
+            height: 500px;
+            margin: 0 auto; 
+            /* 가운데 정렬 */
+            border:1px solid red;
+            z-index: 1;
+        }
+        .view div:first-child{
+            position: absolute;
+            background: red;
+            top:0; left:0;
+            width:70%;
+            height: 400px;
+            top:0; left:0;
+        }
+        .view div:nth-child(2){
+            position: absolute;
+            width: 700px;
+            height: 400px;
+            overflow: hidden;
+            right: 0; bottom: 0;
+            z-index: 2;
+        }
+        .view div:nth-child(2) img{
+            width: 700px;
+        }
+        .view div:nth-child(3) {
+            position:absolute;
+            width: 400px;
+            height: 300px;
+            background: white;
+            left:50px;
+            bottom:50px;
+            border:1px solid blue;
+            box-shadow: 5px 5px 5px;
+            z-index: 3;
+        }
+
+        .view div:nth-child(3) .title{
+            position: relative;
+            width:350px;
+            height: 110px;
+            margin: 0 auto;
+            border : 1px dashed blue;
+            font-size: 190%;
+            text-align: center;
+            line-height: 110px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            z-index: 4;
+            background: white;
+        }
+
+        .view div:nth-child(3) .text{
+            position: relative;
+            width:350px;
+            height: 190px;
+            margin: 0 auto;
+            border : 1px dashed blue;
+            z-index: 4;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="base1">
+        <div class="title">
+            Content Title
+        </div>
+    </div>
+    
+    <div class="base2">
+        <div class="text">
+            군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄이 선포된 경우를 제외하고는 군사법원의 재판을 받지 아니한다.
+        </div>
+    </div>
+
+    <div class="base3">
+        <div class="view">
+            <div></div>
+            <div>
+                <img src="images/Penguins.jpg">
+            </div>
+            <div>
+                <div class="title">Segment Title</div>
+                <div class="text">
+                    군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄이 선포된 경우를 제외하고는 군사법원의 재판을 받지 아니한다.
+                    군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 
+                    기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄이 선포된 경우를 제외하고는 군사법원의 재판을 받지 아니한다.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

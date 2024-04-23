@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .base{
+            position:relative;
+            width: 100%;   
+            height: 200px;
+            border:1px dotted black;
+            background: yellow;
+            padding: 20px;
+        }
+
+        .gap{
+            width: 100%;
+            height: 20px;
+            background-color: white;
+        }
+
+        .title{
+            position:relative;
+            width:400px;
+            height:100px;
+            margin:0 auto;
+            border:1px solid red;
+            font-size : 200%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .text{
+            position:relative;
+            width:400px;
+            height:100px;
+            margin:0 auto;
+            border:1px solid red;
+        }
+        /* ----------------- */
+        .view{
+            position: relative;
+            width:1100px;
+            height:200px;
+            border:1px solid red;
+            margin:0 auto;
+        }
+
+        .circle{
+            position:relative;
+            width:  200px;
+            height: 200px;
+            float:left;
+            border-radius: 50%;
+            overflow: hidden;
+            left:0;
+        }
+        .circle img{ height: 200px; }
+
+        .rect{
+            position:relative;
+            width:350px;
+            height:200px;
+            float: left;
+            /* margin-right: 100px; */
+            border:1px solid blue;
+            box-sizing: border-box;
+        }
+        .rect:last-child{margin-right: 0;}
+        .rect .title{
+            background: blue;
+            color: white;
+            width: 350px;
+            height: 70px;
+            font-size: 200%;
+            line-height: 70px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .rect .text{
+            position:relative;
+            width: 350px;
+            height: 130px;
+            border:1px solid green;
+            margin: 0 auto;
+            background: white;
+            color: blue;
+            font-size: 90%;
+        }
+
+        title{
+            background: blue;
+            color: white;
+            width: 198px;
+            height: 70px;
+            font-size: 200%;
+            line-height: 70px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="base">
+        <div class="title">
+            Content Title01 
+        </div>
+        <div class="text">
+            군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄이 선포된 경우를 제외하고는 군사법원
+        </div>
+    </div>
+
+    <div class="gap"></div>
+
+    <div class="base">
+        <div class="view">
+            <div class="circle">
+                <img src="images/Koala.jpg" >
+            </div>
+            <div class="rect">
+                <div class="title">Segment</div>
+                <div class="text">
+                    군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄
+                </div>
+            </div>
+            
+            <div class="circle">
+                <img src="images/Koala.jpg" >
+            </div>
+            <div class="rect">
+                <div class="title">Segment</div>
+                <div class="text">
+                    군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gap"></div>
+
+    <div class="base">
+        <div class="view">
+            
+                <div class="circle">
+                    <img src="images/Koala.jpg" >
+                </div>
+                <div class="rect">
+                    <div class="title">Segment</div>
+                    <div class="text">
+                        군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄
+                    </div>
+                </div>
+                <div class="circle">
+                    <img src="images/Koala.jpg" >
+                </div>
+                <div class="rect">
+                    <div class="title">Segment</div>
+                    <div class="text">
+                            군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- table tag : 테이블의 시작과 끝을 표시합니다 -->
+    <!-- tr tag : 테이블내의 행의 시작과 끝을 표시합니다 필요한 행의 갯수만큼 table 태그내에 표시합니다. -->
+    <!-- td tag : tr tag 내부에서 각행의 칸(열)들의 시작과 끝을 표시합니다. tr 태그 내부에 필요한 열의 갯수만큼 표시합니다. 각 tr태그에 동일하게 모두 추가합니다. -->
+    <!-- table 작성시 최초의 배경색은 table, tr, td 모두 투명색이고, 외곽선도 없는 상태입니다. -->
+
+    <!-- table 태그의 옵션들 -->
+    <!-- border : 테이블의 외곽선 굵기 -->
+    <!-- width : 테이블의 전체 가로 크기. 별도의 행너비 지정이 없으면 행너비는 테이블 너비안에서 균등분배됩니다. 글자수에 영향이 있을수 있습니다. -->
+    <!-- align : 브라우저 상에 표시할 표의 좌우 정렬 -->
+    <!-- cellpadding : 한칸(셀)의 안쪽 여백 - 글자와 셀 경계선과의 간격 -->
+    <!-- cellspacing : 셀과 셀사이의 간격 -->
+    <!-- bgcolor : 표의 배경색 - 테이블 관련 모드 태그는 최초 투명색이다가 bgcolor가 지정되면 그색으로 변경됩니다. -->
+
+    <!-- tr 태그의 옵션들 -->
+    <!-- bgcolor : 행의 배경색, 각 행마다 다른 배경색을 지정할수 있습니다. 지정하지 않으면 투명색 -->
+    <!-- height : 행의 높이를 조절합니다. width도 있지만 넘칠수도있으니 사용 안함 -->
+    <!-- align : 한행에 적용할 각열의 표시내용 정렬 방식 -->
+
+    <!-- td 태그의 옵션들 -->
+    <!-- bgcolor : 1열(1칸, 1셀)의 배경색, 각 칸마다 다른 배경색을 지정할 수 있습니다. 지정하지 않으면 투명색 -->
+    <!-- width : 1행에서 각열의 너비를 조절합니다. 각열의 너비의 합은 table 너비와 같이 맞춰줍니다. -->
+    <!-- align : 1열(1칸, 1셀)에 적용할 각열의 표시 내용 정렬 방식 -->
+    <table border="1" width="500" align="center" cellspacing="1" cellpadding="10" bgcolor="black">
+       <tr bgcolor="white" height="50">
+            <td width="150">HTML5</td>
+            <td width="50">CSS3</td>
+            <td width="150">JavaScript</td>
+            <td width="50">JQuery</td>
+            <td bgcolor="red" width="100">React</td>
+       </tr>    
+       <tr bgcolor="white" height="50">
+            <td></td><td></td><td></td><td></td><td></td>
+       </tr>
+       <tr bgcolor="white" height="50">
+            <td></td><td></td><td></td><td></td><td></td>
+       </tr>
+       <tr bgcolor="white" height="50">
+            <td></td><td></td><td></td><td></td><td></td>
+       </tr>
+       <tr bgcolor="white" height="50">
+            <td></td><td></td><td></td><td></td><td></td>
+       </tr>
+    </table>
+</body>
+</html>

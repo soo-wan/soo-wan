@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* id와 class의 무분별한 생성과 사용을 막기 위해 이미 생성된 태그와 id,class를 이용하여 상대적인 선택자를 구성합니다. */
+
+        /* 1. 두개의 선택자를 빈칸(공백)으로 이어서 쓰면, 첫번째 선택자 내부의 두번 선택자에 적용하게 됩니다. 자손(후손, 자식) 선택자 */
+        #header h1 {
+            color: red;
+        }
+
+        /* id가 header인 태그 내부의 h1 태그 선택 */
+
+        /* 2. 두개의 선택자를 컴마(,)로 이어서 쓰면, 두개의 선택자가 동시 선택되어 적용됩니다. */
+        h2, h3 { background: yellowgreen; }
+        /* 모든 h2과 h3 태그에 적용 */
+
+        #header h1, #header h3{
+            border:3px solid red;
+        }
+        /* #header 내부의 h1과 h3 선택할때 */
+        /* #header h1, h3{ } -> 잘못사용한 예 : 이는 #header h1과 전체 h3가 선택됩니다. */
+
+        /* 3. 공백을 사용하면 지목된 선택자 안의 모든 후손선택자가 선택 되지만, '>'를 사용하면 바로 아래 수준의 후손 선택자만 선택됩니다. */
+        #header > h1{background: blue; color: white;} /* #header 바로 아래 수준의 h1 */
+
+        /* #header > #nav > h1 {background:red; color:white;} */
+        /* #header 바로 아래 #nav 그리고 그 바로 아래 h1 */
+
+        /* #nav > h2 {{background:orange; color:white;} */
+        /* #nav 바로 아래의 2 */
+
+        /* div > h1 {border:5px solid red; } */
+        /* 모든 div 바로 아래의 h1들 */
+
+        table > tbody > tr > th{color:red;}
+        /* table > tr > th{color:red;} 적용 안됨. tbody 써야함. */ 
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1 class="title">회사 이름/로고</h1>
+        <div id="nav">
+            <h1>Navigation</h1>
+            <h2>header 2</h2>
+            <h3>CSS3</h3>
+        </div>
+    </div>
+    <h3>header에 포함되지 않은 h3 - CSS3</h3>
+    <div id="section">
+        <h1 class="title">Aside</h1>
+        <p>
+        <h1 class="title">Aside</h1>
+        군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상 기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄이 선포된 경우를 제외하고는 군사법원의 재판을
+        받지 아니한다.
+        </p>
+        <h1 class="title">Aside</h1>
+    </div>
+    <hr>
+    <table border="1" width="300" id="table1">
+        <tr>
+            <th>이름</th>
+            <th>주소</th>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>서울시 종로구</td>
+        </tr>
+        <tr>
+            <td>이순신</td>
+            <td>서울시 강남구</td>
+        </tr>
+    </table>
+</body>
+
+</html>

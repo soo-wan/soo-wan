@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .box{width: 170px; height: 100px; border:10px solid blue; margin-bottom: 30px; padding-left: 30px; padding-top: 30px;}
+        /* padding과 border는 전체 크기에 합산됩니다. 따라서 .box의 실제 크기는 너비+선+패딩 width:220px, height:150px로 봐야합니다. */
+        h1{margin: 0;}
+    </style>
+</head>
+<body>
+    <div class="box">박스 모델1</div>
+    <div class="box">박스 모델2</div>
+    <div class="box"><h1>박스 모델3</h1></div>
+</body>
+</html>

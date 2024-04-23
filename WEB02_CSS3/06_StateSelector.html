@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 태그의 상태에 따라 다른 CSS를 적용하고자 할때 사용합니다. */
+        /* - 종류
+                :enabled
+                :disabled
+                :focus
+                :checked
+            - 사용
+                . 선택자 : 상태명 {   }
+        */
+        input[type=text]:enabled{background: yellowgreen;}
+        input[type=text]:disabled{background: orange;}
+        input[type=checkbox]:checked{background: red;}
+    </style>
+</head>
+<body>
+    <h2>Enabled</h2>
+    <input type="text">
+    <h2>Disabled</h2>
+    <input type="text" disabled><br><br>
+    <h2>checked</h2>
+    <input type="checkbox">체크박스
+    
+</body>
+</html>

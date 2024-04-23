@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        h1 + h2{color :red;}
+        h2 + h3{color : orange;}
+        /*  '+' : 지목된 요소 바로 뒤에 있는 요소 지목 */
+        h1 + h3{color : blue;}
+        /* h1 바로 뒤에 h3가 없다면 적용되지 않습니다. */
+
+        h1 ~ h3{background: yellowgreen;}
+        /* 첫번째 지목된 선택자(h1)의 뒤로 등장하는 모든 두번째로 지목된 형태선택자들(h3)  */
+        /*  '~' : 틸드기호 */
+    </style>
+    <!-- 인접(adjacent) 선택자, 형제(sibling) 선택자 -->
+    <!-- 하위수준의 선택자가 아니라 같은 수준의 태그들을 선택할때 사용합니다 -->
+</head>
+<body>
+    <h1>header - 1</h1>
+    <h2>header - 2</h2>
+    <h2>header - 2</h2>
+    <h3>header - 3</h3>
+    <h2>header - 2</h2>
+    <h3>header - 3</h3>
+</body>
+</html>

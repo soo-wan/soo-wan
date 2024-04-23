@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+       * 색상 단위               
+       1. 키워드를 사용한 색상 적용 : red, orange, blue, black, white, magenta, green, yellow 등) 
+       키워드 색깔의 종류 : https://www.w3schools.com/colors/colors_names.asp 
+
+       2. RGB 색상단위
+       . rgb(red, green, blue) -> rgb(0~255, 0~255, 0~255)
+       . rgba(0~255, 0~255, 0~255, alpha) 
+       -> alpha(투명도:0.0(완전투명)~1.0(완전불투명))        
+       . rgb(255,0,0) 빨강 rgb(0,0,255,0.5) 파랑 rgb(255,0,255) 보라
+
+       3. Hex코드 색상 단위 : #00 00 00(검은색) #FF FF FF(흰색)
+       #FF0000(빨간색)  #00FF00(녹색)   #0000FF(파란색)
+       #FF00FF(보라색)  #FFFF00(노란색)  #333333(진한회색)
+       #BBBBBB(옅은회색)
+       rgb 색상과 거의 비슷하며, 표현 방법만 축소된 형태
+
+       -- http://www.colorpicker.com
+
+       4. HSL 색상단위 : hsl(hue(색상), saturation(채도), lightness(명도))
+       .hsla(0~355, 0~100%, 0~100%, alpha) - 기존 hs1에 투명도 추가
+     -->
+     <h1 style="background: rgb(241, 14, 33);">Header</h1>
+     <h1 style="background: rgb(0, 255, 0);">Header</h1>
+     <h1 style="background-color: rgba(241, 14, 33, 0.5);">Header</h1>
+
+     <h1 style="background-color: #F0F641;">Header</h1>
+     <h1 style="background-color: #F0F641; opacity: 0.5;">Header</h1>
+
+     <h1 style="background-color: hsl(111, 91%, 38%);">Header</h1>
+     <h1 style="background-color:hsla(111, 91%, 38%, 0.5);">Header</h1>
+
+</body>
+</html>

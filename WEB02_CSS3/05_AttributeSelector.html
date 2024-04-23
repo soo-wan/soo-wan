@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* Attribute : 태그내에서 추가로 설정하는 속성들(src, type, href등) */
+        /* Attribute Selector : 태그 이름과 내부의 속성값으로 선택하는 선택자입니다. 주로 input 태그에 사용합니다. */
+        input[type=text]{
+            background: orange;
+        }
+        input[type=password]{
+            background: cyan;
+        }
+    </style>
+</head>
+<body>
+    <!-- 태그 selector 를 이용할때, 특정 속성값으로 세부적인 선택을 하고자 한다면 Attribute Selector를 사용합니다 -->
+    <input type="text"><br>
+    <input type="password"><br>
+    <input><br>
+    <!-- type이 지정되지 않은 input 태그는 기본값으로 type이 text로 적용됩니다. 다만 스타일 적용에서 input[type=text]로는 선택되지 않습니다. -->
+
+    <!-- input 태그의 type이 text인곳의 크기는 style의 width height로 조정 할 수 있고, 태그내에서 size로도 조정이 가능합니다. -->
+    <input type="text" size="30"><br>
+    <input type="text" style="width:150px; height: 80px;">
+</body>
+</html>

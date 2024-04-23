@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .box{background-color: yellow; width: 300px; height: 100px;
+        margin: 10px; border:1px solid black;}
+        #box1{display: block;}
+        /* display:bolck 원래 div가 block 이므로 변화가 없습니다. */
+
+        #box2{display: inline;}
+        /* inline 형식의 의미 : 줄바꿈 속성이 없어서 한줄에 이어서 나열. width, height 값도 적용할 수 없습니다. */
+
+        #box3{display: inline-block;}
+        /* inline에서 width,height만 살려내어 표시합니다. 여전히 줄바꿈은 없습니다. */
+
+        #box4{display: none;} 
+        /* #box4{display: block;} */
+        /* 화면에서 사라집니다. 자리도 없어집니다. */
+    </style>
+</head>
+<body>
+    <span>Dummy</span>
+    <div id="box4" class="box">
+        <span>교육의 자주성.전문성.정치적 중립성 및 대학의 자율성은 법률이 정하는 바</span>
+    </div>
+    <span>Dummy</span>
+    <br><br>
+
+    <span>Dummy</span>
+    <div id="box3" class="box">
+        <span>교육의 자주성.전문성.정치적 중립성 및 대학의 자율성은 법률이 정하는 바</span>
+    </div>
+    <span>Dummy</span>
+    <br><br>
+
+    <span>Dummy</span>
+    <div id="box2" class="box">
+        <span>교육의 자주성.전문성.정치적 중립성 및 대학의 자율성은 법률이 정하는 바</span>
+    </div>
+    <span>Dummy</span>
+    <br><br>
+
+    <span>Dummy</span>
+    <div id="box1" class="box">
+        <span>교육의 자주성.전문성.정치적 중립성 및 대학의 자율성은 법률이 정하는 바</span>
+    </div>
+    <span>Dummy</span>
+    <br><br>
+</body>
+</html>

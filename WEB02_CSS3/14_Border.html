@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .box1{width: 500px; height: 80px; background: yellow; text-align: center; 
+        /* border: 1px solid black; */
+        border-left-width:thin;
+        border-right-width: 15px;
+        border-top-width: thick;
+        border-bottom-width: 20px;
+        /* 
+            border-width 속성
+             -테두리의 너비를 지정하는 스타일 속성
+             -크기단위:border-left[top/right/bottom]-width
+             -키워드:medium/thick/thin...
+        */
+        border-left-color: green;
+        border-right-color: red;
+        border-top-color: black;
+        border-bottom-color: #0000FF;
+        border-left-style: solid;
+        border-right-style: double;
+        border-top-style: dotted;
+        border-bottom-style: dashed;
+        /* 
+            -border-style 속성 : 테두리의 형태를 지정하는 스타일
+                -border-left[top/right/bottom]-style
+            -border-color 속성
+                -border-left[top/right/bottom]-color
+        */
+        }
+        .box2{width: 500px; height: 150px; background: yellow; text-align: center; border: 5px solid blue; border-radius: 30px;
+        /* 
+            -border-radius 속성
+                . CSS3에서 추가된 속성
+                . 테두리가 둥근 사각형 또는 원을 만들 수 있다.
+            -border-radius : 50px 100px 70px 30px;
+                .border-radius 값을 네개로 넣었을때 적용
+                .순서 : 왼쪽위 -> 오른쪽위 -> 오른쪽아래 -> 왼쪽아래
+        */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"><h1>Lorem ipsum dolor amet</h1></div>
+    <br>
+    <div class="box2"><h1>Lorem ipsum dolor amet</h1></div>
+</body>
+</html>

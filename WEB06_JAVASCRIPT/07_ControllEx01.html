@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        //2024년 1월 1일 월요일
+        //2024년 한해서 월과 일을 입력받아서 요일을 출력합니다.
+        var today = new Date();
+        var month = today.getMonth()+1;
+        var date1 = today.getDate();
+        var m = Number( prompt("월을 입력하세요", month) );
+        var d = Number( prompt("일을 입력하세요", date1) );
+
+        var days = 0; //날짜들을 합산할 변수
+        // 입력한 월의 전달까지 지난 날짜수 합산
+        if ( m == 1) {days = 0;} 
+        else if ( m == 2 ){ days = 31; } 
+        else if ( m == 3 ){ days = 31+29; } 
+        else if ( m == 4 ){ days = 31+29+31; } 
+        else if ( m == 5 ){ days = 31+29+31+30; } 
+        else if ( m == 6 ){ days = 31+29+31+30+31; } 
+        else if ( m == 7 ){ days = 31+29+31+30+31+30; } 
+        else if ( m == 8 ){ days = 31+29+31+30+31+30+31; } 
+        else if ( m == 9 ){ days = 31+29+31+30+31+30+31+31; } 
+        else if ( m == 10 ){ days = 31+29+31+30+31+30+31+31+30; } 
+        else if ( m == 11 ){ days = 31+29+31+30+31+30+31+31+30+31; } 
+        else if ( m == 12 ){ days = 31+29+31+30+31+30+31+31+30+31+30; } 
+
+        //입력한 일을 날짜수에 합산
+        days += d;
+
+        //총 날짜 수를 7로 나눈 나머지 계산
+        var weekday = days % 7;
+
+        document.write("<h2>"+ m + "월 " + d +"일은</h2>");
+        //weekday 값에 따른 요일을 출력
+        if(weekday == 1){ document.write("<h2>월요일입니다</h2>"); }
+        else if(weekday == 2){ document.write("<h2>화요일입니다</h2>"); }
+        else if(weekday == 3){ document.write("<h2>수요일입니다</h2>"); }
+        else if(weekday == 4){ document.write("<h2>목요일입니다</h2>"); }
+        else if(weekday == 5){ document.write("<h2>금요일입니다</h2>"); }
+        else if(weekday == 6){ document.write("<h2>토요일입니다</h2>"); }
+        else if(weekday == 0){ document.write("<h2>일요일입니다</h2>"); }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

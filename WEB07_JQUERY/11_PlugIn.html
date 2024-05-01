@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="script/jquery.innerfade.js"></script>
+    <script type="text/javaScript">
+        $(function(){
+            $('#inner-fade').innerfade(
+              {
+                animationtype:'fade',
+                speed:'slow',
+                timeout:2000,
+                containerheight : '1em'
+              }  
+            );
+        })
+    </script>
+</head>
+<body>
+    <ul id="inner-fade">
+        <li><img src="images/Desert.jpg" width="600"></li>
+        <li><img src="images/Hydrangeas.jpg" width="600"></li>
+        <li><img src="images/Chrysanthemum.jpg" width="600"></li>
+        <li><img src="images/Koala.jpg" width="600"></li>
+        <li><img src="images/Penguins.jpg" width="600"></li>
+        <li><img src="images/Tulips.jpg" width="600"></li>
+    </ul>
+</body>
+</html>

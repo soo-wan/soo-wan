@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        img{
+            width: 600px;
+            height: 400px;
+        }
+        .view{
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border : 5px solid blue;
+            overflow: hidden;
+        }
+        .imgs{
+            position: absolute;
+            width: 4800px;
+            height: 400px;
+            border : 1px solid red;
+            top : 0; left : 0;
+            transition: 0.3s;
+        }
+        #remote{
+            position: absolute;
+            border: 1px dotted white;
+            bottom: 10px;
+            left : 212px;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            float: left;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: white;
+            margin: 4px;
+        }     
+    </style>
+
+    <script type="text/JavaScript">
+        function move(num){
+            var dist = num * 600 * -1;
+            document.getElementById("imgs").style.left = dist + "px";
+            //전체 리모콘 버튼을 회색으로, 전달된 번째 버튼을 검은색으로 변경
+            for(var i=0; i<=7; i++){
+                document.getElementById("btn" + i).style.background = 'white';
+                document.getElementById("btn" + num).style.background = 'black';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="view">
+        <div class="imgs" id="imgs">
+            <img src="images/Koala.jpg"><img src="images/Chrysanthemum.jpg"><img src="images/Desert.jpg"><img src="images/Penguins.jpg"><img src="images/sunset.jpg"><img src="images/Jellyfish.jpg"><img src="images/Hydrangeas.jpg"><img src="images/Tulips.jpg">
+        </div>
+
+        <div id="remote">
+            <ul>
+                <li id="btn0" onclick="move(0);"></li>
+                <li id="btn1" onclick="move(1);"></li>
+                <li id="btn2" onclick="move(2);"></li>
+                <li id="btn3" onclick="move(3);"></li>
+                <li id="btn4" onclick="move(4);"></li>
+                <li id="btn5" onclick="move(5);"></li>
+                <li id="btn6" onclick="move(6);"></li>
+                <li id="btn7" onclick="move(7);"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

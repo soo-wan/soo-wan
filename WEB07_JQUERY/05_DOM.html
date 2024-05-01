@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style type="text/css">
+        .item_1 { background: red; color: white;}
+        .item_2 { background: pink; color: white;}
+        .item_3 { background: orange; color: white;}
+
+        .width_1{ width: 100px; }
+        .width_2{ width: 200px; }
+        .width_3{ width: 300px; }
+    </style>
+    <script type="text/javaScript">
+        // h1 태그에 item_1, item_2, item_3 클래스를 추가
+        $(function(){
+            // $('h1').eq(0).addClass('item_1');
+            // $('h1').eq(1).addClass('item_2');
+            // $('h1').eq(2).addClass('item_3');
+
+            //2번째 방법
+            // $('h1').each(function(index){
+            //     $(this).addClass('item_' + (index+1));
+            // });
+
+            //3번째 방법
+            // $('h1').addClass(
+            //     function(index){
+            //         return "item_" + (index+1); 
+            //         // addClass에 익명함수가 클래스이름을 조합해서 리턴
+            //     }
+            // );
+        });
+
+        /*
+        //문서 객체의 속성 검사/추출/추가
+        $(function(){
+            //attr 함수를 이용한 태그 내부의 속성값 추출
+            // var src = $('img').attr('src');
+            // var header1 = document.createElement('h2');
+            // var textNode = document.createTextNode(src);
+            // header1.appendChild(textNode);
+            // document.body.appendChild(header1);
+
+            // var w = $('img:eq(1)').attr('width');
+            // header1 = document.createElement('h2');
+            // textNode = document.createTextNode(w);
+            // header1.appendChild(textNode);
+            // document.body.appendChild(header1);
+
+            //attr 함수를 이용한 태그내부의 속성값 변경
+            // $('img:eq(0)').attr('width', '100');
+            // $('img:eq(1)').attr('width', '200');
+            // $('img:eq(2)').attr('width', '300');
+
+            // $('img').attr(
+            //     'width', 
+            //     function(index){return (index+1) * 100 +""; }
+            // );
+
+            $('img:eq(2)').attr( {'width' :'200', 'height' : '200'});
+
+            // 속성의 제거
+            $('img:eq(0)').removeAttr('width'); //적용되었던 width 값이 제거 되면 원본크기로 설정됩니다
+        });
+
+        //문서 객체의 스타일 검사/추출/추가
+        $(function(){
+            // 두번째 h1 태그의 배경색 추출
+            var color = $('h1:eq(1)').css('background-color');
+
+            var header1 = document.createElement('h1');
+            var textNode = document.createTextNode(color);
+            header1.appendChild(textNode);
+            document.body.appendChild(header1);
+        });
+
+        // 문서 객체의 스타일 추가
+        // - 사용형태 3가지
+        //  1) 단순 스타일 추가 : $(selector).css(name, value);
+        $(function(){
+            $('h1').css('color', 'red'); //전체 h1태그에 적용
+        });
+
+        //  2) 익명함수를 이용한 방법
+        $(function(){
+            $('h2').css('color',
+                function(){
+                    if(index == 0) return 'red';
+                    else if(index == 1) return 'green';
+                    else return 'blue';
+                });
+        });
+
+        //  3) 객체 형식으로 두가지 이상 css를 동시에 적용 : $(selector).css(object);
+        $(function(){
+            var color = ['red', 'green', 'blue'];
+            $('h1').css(
+                {
+                    'background' : 'yellow',
+                    'color' : function(index){return color[index];}
+                });
+        });
+
+        // 문서 객체의 내부 검사 - 추출 -> 태그 내부의 글자들 컨트롤
+        //  - 기존 자바스크립트에서 문서 객체의 innerHTML 속성과 관련된 jquery 메소드
+        //  - 1)html() : 문서 객체 내부의 글자와 관련된 모든 기능을 수행.
+        $(function(){
+            var html = $('h1').html();
+            var header1 = document.createElement('h2');
+            var textNode = document.createTextNode(html);
+            header1.appendChild(textNode);
+            document.body.appendChild(header1);
+        });
+        // -2) text() :
+        //    . 문서 객체 내부의 글자와 관련된 모든 기능을 수행
+        //    . 선택자로 선택한 문서 모든 객체의 글자를 가져와 출력
+        $(function(){
+            var text = $('h1').text();
+            var header1 = document.createElement('h2');
+            var textNode = document.createTextNode(text);
+            header1.appendChild(textNode);
+            document.body.appendChild(header1);
+        });
+        */
+
+        //문서 객체의 내부 추가
+        //  1) $(selector).html(value); -> HTML 태그를 인식해 문자열
+        //     $(selector).text(value); -> HTML 태그를 인식하지 않음.
+        $(function(){
+            $('.useHtml').html('<h1>$().html()</h1>');
+        }); //태그 인식
+        $(function(){
+            $('.useText').text('<h1>$().text()</h1>');
+            //비슷한 표현 : $('.useText').innerHTML = '<h1>$().text()</h1>';
+        }); //태그 미인식
+
+        // 문서 객체내부의 제거
+        //  1) remove() : 특정 문서 객체를 제거
+        //  2) empty() : 특정 문서 객체의 후손까지 모두 제거
+        $(function(){
+            $('.userHtml').empty();
+        });
+
+        $(function(){
+            $('.userHtml').first().remove();
+        });
+
+        // 문서 객체의 생성
+        // 자바스크립트에서의 문서 객체 생성
+        // var header1 = document.createElement('h2');
+        // var textNode = document.createTextNode(text);
+        // header1.appendChild(textNode);
+        // document.body.appendChild(header1);
+
+        // html()이나 text()는 있는 태그에 내용을 수정 또는 추가하는 거라면
+        // 아래는 없는 태그부터 생성하고 써놓는 기능
+        // 제이쿼리에서 문서객체를 생성
+        //  - $() : 문서 객체 생성
+        //  - $() 함수의 매개 변수에 HTML 태그 자체를 문자열로 넣기만 하면 해당 태그의 문서 객체가 생성됨
+        //  - 생성한 문서 객체를 body 태그에 추가하는 방법
+        // $(function(){
+        //     $('<h1></h1>').html('Hello JQuery~#1').appendTo('body');
+        //     // $('h1') : 이미 있는 태그 선택
+        //     // $('<h1></h1>') : 없는 태그 새로 생성
+        // });
+
+        // 텍스트 노드를 갖지 않는 문서 객체를 생성하는 방법
+        // $(function(){
+        //     $('<img>').attr({src :'images/koala.jpg', width:'200'}).appendTo('body');
+        // });
+
+        // 문서객체를 특정 위치에 추가/이동 하는 함수
+        // $(A).appendTo(B) : A를 B의 뒷부분(자식요소)에 추가 한다
+        // $(A).prependTo(B) : A를 B의 앞부분(자식요소)에 추가 한다
+        // $(A).insertAfter(B) : A를 B의 뒤(형제요소)에 추가 한다
+        // $(A).insertBefore(B) : A를 B의 앞(형제요소)에 추가 한다
+
+        // $(A).append(B) : B를 A의 뒷부분에 추가 한다
+        // $(A).prepend(B) : B를 A의 앞부분에 추가 한다
+        // $(A).after(B) : B를 A의 뒤에 추가 한다
+        // $(A).before(B) : B를 A의 앞에 추가 한다
+
+        $(function(){
+            $('img').css('width', '200');
+            //맨 마지막 이미지를 맨 앞으로
+            window.setInterval(function(){
+                $('img').first().appendTo('.view');
+            }, 1000);
+        });
+    </script>
+
+</head>
+<body>
+    <div class="view" style="width:200px; height:150px; overflow: hidden;">
+    <img src="images/Chrysanthemum.jpg"><img src="images/Desert.jpg"><img src="images/Hydrangeas.jpg"><img src="images/Koala.jpg"><img src="images/Penguins.jpg"><img src="images/Tulips.jpg">
+    </div>
+    <!-- 문서 객체의 내부 추가 -->
+    <!-- <div class="useHtml"></div>
+    <div class="useHtml"></div>
+    <div class="useHtml"></div>
+    <div class="useText"></div>
+    <div class="useText"></div>
+    <div class="useText"></div> -->
+
+
+    <!-- 문서 객체의 스타일 검사/추출/추가 -->
+    <!-- <h1 class="item_1">Header-0</h1>
+    <h1 class="item_2">Header-1</h1>
+    <h1 class="item_3">Header-2</h1>
+    <h2>Header-0</h2>
+    <h2>Header-1</h2>
+    <h2>Header-2</h2> -->
+
+
+
+    <!-- 문서 객체의 속성 검사/추가 -->
+    <!-- <h1 class="item_1">koala.jpg</h1>
+    <img src="images/Koala.jpg" width="150">
+    <h1 class="item_2">Penguins.jpg</h1>
+    <img src="images/Penguins.jpg" width="150">
+    <h1 class="item_3">Tulips.jpg</h1>
+    <img src="images/Tulips.jpg" width="150"> -->
+
+    <!-- 1. 문서 객체의 클래스 속성 추가
+    <h1>Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1> -->
+</body>
+</html>

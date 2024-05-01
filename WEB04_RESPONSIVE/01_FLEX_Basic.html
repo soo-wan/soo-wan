@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .container{
+            /* position: relative; */
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+            display: flex;
+            justify-content: space-around;
+            align-items: center; 
+        }
+        .box:nth-child(1){
+            background: red;
+            /* left:50px;
+            top: calc( 50% - 50px ) ; */
+        }
+        .box:nth-child(2){
+            background: green;
+            /* left:150px;
+            top: calc( 50% - 50px ) ;  */
+        }
+        .box:nth-child(3){
+            background: blue;
+            /* left:250px;
+            top: calc( 50% - 50px ) ;  */
+        }
+        .box{
+            width: 100px; 
+            height: 100px; 
+            /* float: left;
+            position: absolute; */
+            /* margin: 3px; */
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        CSS FlexBox(Flexible Box)를 사용하는 이유
+         - 기존의 float, position, display 속성을 이용하여 배치 정렬 방향 순서 등을 조절하는 대신 그와 같은 기능을 갖고 있으면서도 동시에 반응형 웹을 위한
+         레이아웃을 효율적으로 만들수 있기 때문입니다.
+
+         1. 속성 이름과 값들
+         - display : flex;
+         - justify-content : center;
+         - align-items : center;
+         - flex-direction : row;
+         - 등등
+
+         2. Flex 적용 예제
+         - 수직중앙 수평중앙 배치
+         - 여러 요소들의 행방향 또는 열방향 배치
+         - 상단 네비 제작
+         - 시멘틱(semantec) 반응형 제작 등
+     -->
+     <!-- .containver + tab -->
+     <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+     </div>
+
+     <!-- div + tab -->
+     <div></div>
+
+     <!-- div*3 + tab -->
+     <dvi></dvi>
+     <dvi></dvi>
+     <dvi></dvi>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout06.html</title>
+    <style type="text/css">
+        .base{ 
+            position: relative; 
+            width:100%; 
+            height:200px; 
+            background-color: #EFEF81; 
+            margin-bottom: 20px;
+        }
+        .base:first-child .title { 
+            position:relative; 
+            width:400px; 
+            height:100px; 
+            border:1px solid black; 
+            margin:0 auto;  
+            font-size: 200%; 
+            line-height: 100px; 
+            font-weight: bold; 
+            text-align: center; 
+        }
+        .base:first-child .text{ 
+            position:relative; 
+            width:400px; 
+            height:100px; 
+            border:1px solid black; 
+            margin:0 auto; 
+        } 
+
+        .view{ 
+            position: relative; 
+            width:1100px; 
+            height:600px; 
+            border:1px solid red; 
+            margin:0 auto;
+        }
+        .rect{ 
+            position: relative; 
+            width:350px; 
+            height:600px; 
+            border:1px solid blue; 
+            float: left; 
+            margin-right:25px; 
+            box-sizing: border-box;
+        }
+        .rect:last-child{ margin-right: 0; }
+
+        .description{
+            position: relative; 
+            width:310px; 
+            height:280px; 
+            background: white; 
+            margin: 0 auto;    
+            border:1px solid black; 
+            box-shadow: 5px 5px 5px; 
+            top:-30px; 
+        }
+        .description .title{  
+            position:relative; 
+            width:280px; 
+            height:80px; 
+            margin:0 auto; 
+            border:1px dotted black; 
+            font-size:200%; 
+            font-weight :bold; 
+            text-align:center; 
+            line-height:80px; 
+        }
+        .description .text{ 
+            position:relative; 
+            width:280px; 
+            height:200px; 
+            margin:0 auto; 
+            border:1px dotted black; 
+            font-size : 90%; 
+            color:gray; 
+        }
+
+        .button{ 
+            position:absolute; 
+            width:150px; 
+            height:40px; 
+            background: blue; 
+            color:white; 
+            font-size: 150%; 
+            line-height: 40px; 
+            text-align: center; 
+            font-weight:bold; 
+            right:0; 
+            bottom:60px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="base">
+        <div class="title">Content Title01</div>
+        <div class="text">비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 ·초소·유독 음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다</div>
+    </div>
+
+    <div class="base" style="height:600px">
+        <div class="view">
+            <div class="rect">
+                <div class="img">
+                    <img src="images/Koala.jpg" width="350"/>
+                </div>
+                <div class="description">
+                    <div class="title">Segment</div>
+                    <div class="text">비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병 · 초소 · 유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다.</div>
+                </div>
+                <div class="button">BUTTON</div>
+            </div>
+
+            <div class="rect">
+                <div class="img">
+                    <img src="images/Penguins.jpg" width="350"/>
+                </div>
+                <div class="description">
+                    <div class="title">Segment</div>
+                    <div class="text">비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병 · 초소 · 유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다.</div>
+                </div>
+                <div class="button">BUTTON</div>
+            </div>
+
+            <div class="rect">
+                <div class="img">
+                    <img src="images/Lighthouse.jpg" width="350"/>
+                </div>
+                <div class="description">
+                    <div class="title">Segment</div>
+                    <div class="text">비상계엄하의 군사재판은 군인·군무원의 범죄나 군사에 관한 간첩죄의 경우와 초병 · 초소 · 유독음식물공급·포로에 관한 죄중 법률이 정한 경우에 한하여 단심으로 할 수 있다.</div>
+                </div>
+                <div class="button">BUTTON</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

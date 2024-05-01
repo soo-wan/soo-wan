@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        //반복실행문 For
+        for(var i=1; i<=5; i++){
+            document.write("<h2>반복횟수 : " + i + "</h2>"); 
+        }
+        //var i = 1 -> 반복 실행의 반복횟수를 제어해줄 변수와 초기값
+        //i<=10 -> 다음 반복을 실행할지 안할지를 결정하는 관계연산식 연산의 결과가 true 일때 다음 반복 실행
+        //i++ -> 다음 반복 실행전 반복제어 변수의 증감량
+
+        //while 반복문
+        var value = 1; //반복 횟수 제어 변수
+        while(value <= 5){//다음 반복을 계속할 관계연산
+            document.write("<h2> 반복횟수 : " + value +"</h2>"); 
+            value++; //반복제어변수의 증감량
+        }
+
+        // do~while 반복문
+        var value = 10;
+        do{
+            document.write("<h2> 반복횟수 : " + value +"</h2>"); 
+            value++;
+        }while(value <= 5);
+
+        //배열과 for
+        var array = ['포도', '사과', '바나나', '망고'];
+        // for ( var k : array ){
+        //     document.write("<h2>" + k +"</h2>"); 
+        // } 
+        //얘는 자바에서만 향상된 for문.
+
+        for(var i in array){
+            document.write("<h2>" + array[i] +"</h2>");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

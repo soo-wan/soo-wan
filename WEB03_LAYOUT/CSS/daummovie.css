@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+}
+#first {
+    position: relative;
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px solid silver;
+}
+.container {
+    position: relative;
+    width: 1100px;
+    height: 65px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+#first .container .left {
+    position: relative;
+    width: 500px;
+    height: 65px;
+    border: 1px solid blue;
+    line-height: 65px;
+    float:left;
+}
+#first .container .right {
+    position: relative;
+    width: 300px;
+    height: 65px;
+    border: 1px solid blue;
+    line-height: 65px;
+    float:right;
+    text-align: right;
+}
+#first .container .left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+#first .container .left ul li {
+    float: left;
+    margin-right: 20px;
+    color: gray;
+}
+img {
+    vertical-align: middle;
+}
+#first .container .left ul li:nth-child(2) {
+    color: black;
+    font-weight: bold;
+    font-size: 110%;
+}
+#first .container .right ul {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+#first .container .right ul li {
+    list-style: none;
+    float: right;
+    margin-right: 20px;
+    color: gray;
+    line-height: 65px;
+}
+img {
+    vertical-align: middle;
+}
+/* 
+#first .container .right ul li:nth-child(2) {
+    color: black;
+    font-weight: bold;
+    font-size: 110%;
+} */
+#second {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    border-bottom: 1px solid silver;
+    margin-bottom: 5px;
+}
+#second .container {
+    position: relative;
+    width: 1100px;
+    height: 75px;
+    border: 1px solid red;
+    margin: 0 auto;
+}
+#second .container .left {
+    position: relative;
+    width: 700px;
+    height: 75px;
+    border: 1px dotted blue;
+    line-height: 75px;
+    text-align: left;
+    float:left;
+}
+#second .container .left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+#second .container .left ul li {
+    float:left;
+    margin-right: 30px;
+    font-size: 120%;
+    font-weight: bold;
+}
+#third{
+    position: relative;
+    width: 100%;
+    height: 560px;
+    border-bottom: 1px solid silver;
+}
+#third .container{
+    position: relative;
+    width: 1220px;
+    height: 560px;
+    border: 1px solid red;
+    margin: 0 auto; 
+}
+#third .container .lbutton{
+    position: relative;
+    float:left;
+    width: 60px;
+    height: 560px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+#third .container .news{
+    position: relative;
+    float:left;
+    width: 1100px;
+    height: 560px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+#third .container .rbutton{
+    position: relative;
+    float:left;
+    width: 60px;
+    height: 560px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.button {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-top: 255px;
+}
+.lbutton .button {
+    background-image: url(../images/ico_movie_171115.png);
+    background-position: -60px -460px;
+}
+.rbutton .button {
+    position: relative;
+    background-image: url(../images/ico_movie_171115.png);
+    background-position: 0 -460px;
+    float: right;
+}
+#third .container .news .newsbox {
+    position: relative;
+    width: 267px;
+    height: 270px;
+    border: 1px solid green;
+    margin-right: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    float: left;
+}
+#third .container .news .newsbox .img {
+    position: relative;
+    width: 265px;
+    height: 148px;
+    border: 1px solid blue;
+    border-radius: 15px;
+    overflow: hidden;
+}
+#third .container .news .newsbox .title {
+    position: relative;
+    width: 245px;
+    height: 80px;
+    border: 1px solid blue;
+    font-size : 100%;
+    color : #565656;
+    margin : 5px auto;
+}
+#third .container .news .newsbox .company {
+    position: relative;
+    width: 245px;
+    height: 20px;
+    border: 1px solid blue;
+    font-size : 100%;
+    color : #565656;
+    margin : 5px auto;
+}

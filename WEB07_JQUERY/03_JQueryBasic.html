@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="script/jquery-3.7.1.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style type="text/css">
+        .high-light{ background: yellow; }
+        .high-light-0{ background: yellow; }
+        .high-light-1{ background: orange; }
+        .high-light-2{ background: blue; }
+        .high-light-3{ background: green; }
+        .high-light-4{ background: red; }
+    </style>
+    <script type="text/javaScript">
+        // .선택자를 사용해 문서 객체를 선택한 후에 다음과 같은 위치를 지정한다.
+        // 요소:odd -> 홀수 번째에 위치한 문서 객체 선택
+        // 요소:even -> 짝수 번째에 위치한 문서 객체 선택
+        // 요소:first -> 첫번째에 위치한 문서 객체 선택
+        // 요소:last -> 마지막에 위치한 문서 객체 선택
+
+        //특정 필터 선택자
+        // $("요소선택:first-of-type") : 요소 무리중 첫번째 요소 선택
+        // $("요소선택:last-of-type") : 요소 무리중 마지막번째 요소 선택
+        // $("요소선택:nth-child(3)") : 요소 무리중 세번째 요소 선택
+        // $("요소선택:nth-child(3n)") : 요소 무리중 3의 배수번째 요소 선택
+        // $("요소선택:nth-last-of-type(2)") : 요소 무리중 뒤에서 두번째 요소 선택
+        // $("요소선택:only-child") : 부모요소내에 자식요소가 1개뿐인 요소 선택
+
+        $(function(){
+            $("#menu2 li:first-of-type").css({"background-color":"#ff0"});
+            $("#menu2 li:last-of-type").css({"background-color":"#0ff"});
+            $("#menu3 li:only-child").css({"background-color":"#f00"});
+
+            // $("요소선택:eq(index)") : 요소 무리중 인덱스 번호가 참조하는 요소
+            //  -> $("요소선택").eq(index) 와 같은 표현
+            $("#menu li").eq(2).css({"background-color":"#ff0"});
+            $("#menu li:eq(3)").css({"background-color":"#0ff"});
+
+            // $("요소선택:gt(index)") : 요소 무리중 인덱스 번호보다 큰 인덱스가 참조하는 요소
+            // $("요소선택:lt(index)") : 요소 무리중 인덱스 번호보다 작은 인덱스가 참조하는 요소
+            $("#menu li:lt(2)").css({"background-color":"#0ff"});
+            $("#menu li:gt(2)").css({"background-color":"#f0f"});
+
+            // $("요소선택").slice(index, index) : 요소중 인덱스 번호부터 뒷쪽 인덱스 번호 전까지 참조하는 요소
+            $("#menu li").slice(5,9).css({"background-color":"#DDD"});
+            //index 5~8
+        });
+
+        //제이쿼리 명령으로 태그에 class 추가 및 제거
+        $(function(){
+            $('h1').addClass('high-light');
+            //h1 태그에 class = 'high-light'를 추가
+            //<h1>item - 0</h1> => <h1 class='high-light'>item-0</h1>로 변경
+
+            $('h1:eq(0)').addClass('high-light-0');
+            $('h1').eq(1).addClass('high-light-1');
+            $('h1').eq(2).addClass('high-light-2');
+            $('h1').eq(3).addClass('high-light-3');
+            $('h1').eq(4).addClass('high-light-4');
+
+            $('h1').eq(3).removeClass('high-light-3');
+            $('h1').eq(3).removeClass('high-light');
+        });
+
+        // 제이쿼리를 사용한 배열 관리 & 반복 실행문
+
+        //배열의 생성은 자바스크립트와 같다. 생성된 배열은 제이쿼리 내에서도 사용가능
+        var a1 = [10, 20, 30, 40, 50, 60, 70, 80]; //a1[0] a1[1] a1[2]
+
+        //자바스크립트 반복문으로 배열 출력
+        for(var i in a1)
+            // document.write("<h2> index : " + i + ", item : " + a1[i] + "</h2>");
+
+        // 제이쿼리를 이용한 반복실행 + 배열의 관리
+        // -each() 메서드 사용
+        //      .매개 변수로 입력한 익명함수를 반복할 내용으로 사용
+        // -each() 메서드의 사용형태
+
+        $(function(){
+            // $.each(a1, function(index, item){});
+            // a1배열의 갯수만큼 function을 반복 실행하세요.
+            // 이때 index 매개변수에는 배열의 인덱스가 매 반복마다 전달
+            // item 매개변수에는 배열의 값들이 매반복마다 전달
+            $.each(a1, function(index, item){
+                // document.write("<h1> index : " + index +", item : " + item +"</h1>");
+
+                // document.body.innerHTML += "<h1> index : " + index +", item : " + item +"</h1>"
+            });
+        })
+
+        var array = [
+            {name:'Naver', link:'https://www.naver.com'},
+            {name:'Daum', link:'https://www.daum.net'},
+            {name:'Nate', link:'https://www.nate.com'}
+        ];
+
+        var output ='';
+        $(function(){
+            $.each(array, function(index, item){
+                output += "<h1><a href='" + item.link + "' target='blank_'>"
+                    +item.name +"</a></h1>";
+                //배열 요소중 name과 link를 이용해 anchor 태그 구성
+                //<a href='https://www.naver.com' target='blank_'></a>";
+            });
+            document.body.innerHTML += output;
+        });
+
+        var m_days = [31,28,31,30,31,30,31,31,30,31,30,31];
+        // 1월의 마지막 날 : 31일
+        // 2월의 마지막 날 : 28일
+        // ...
+        // 12월의 마지막 날 : 31일
+
+        // 와 같이 jquery의 each를 이용해서 출력해주세요.
+        var output2 ='';
+        $(function(){
+            $.each(m_days, function(index, item){
+                output2 += "<h3>"+ (index+1) +
+                    "월 마지막 날 : " + item +"일 </h3>";
+            });
+            document.body.innerHTML += output2;
+        });
+
+        // jQuery를 사용한 반복실행 응용(배열 -> 태그)
+        // 배열을 대상으로 하는 each : 
+        // $.each(배열이름, 매개변수가 있는 익명함수){} );
+        // 태그를 대상으로 하는 each : 여러개의 같은 종류를 태그를 모아서 그 갯수 만큼 반복 실행
+        $(function(){
+            // 반복 실행의 주체가 배열에서 태그로 바뀌고, 쓰여지는 위치도 each 안에서 밖으로 바뀌었으므로, each 안에는 실행할 익명함수만 씁니다.
+            // $(selector).each(function(index, item){});
+            $('h1').each( function(index, item){
+                //index에는 h1 들에 부여된 임시 번호들 0부터 시작
+                //item에는 현재 반복 실행에 해당하는 h1 태그
+                $(item).addClass('high-light-' + index);
+                // index : 0~4
+                // item : $('h1').eq(0) ~ $('h1').eq(4)
+                
+                // 현재 h1 태그를 item이라는 이름 말고 표현할수있음 또 다른 이름 : this
+                 $(this).addClass('high-light-' + index);
+            } );
+        });
+
+        $(function(){
+            $('h1').addClass( function(index){
+                return 'high-light-' + index;
+                //h1태그가 이미 여러개이기 때문에 $('h1')가 사용되는 순간 0부터 시작되는 index 부여됩니다.
+                //그 index는 익명함수의 매개변수로 하나씩 전달되면서 각각 호출합니다.
+            } );
+        });    
+    </script>    
+</head>
+<body>
+    <h1>item - 0</h1>
+    <h1>item - 1</h1>
+    <h1>item - 2</h1>
+    <h1>item - 3</h1>
+    <h1>item - 4</h1>
+
+    <!-- 특정 필터 및 탐색 선택자 -->
+    <!-- <h1>탐색 선택자</h1>
+    <ul id="menu3">
+        <li>내용one</li>
+    </ul>
+    <ul id="menu2">
+        <li>내용1</li><li>내용2</li><li>내용3</li><li>내용4</li>
+    </ul>
+    <ul id="menu">
+        <li>내용1</li>  <li>내용2</li>  <li>내용3</li>  <li>내용4</li>  <li>내용5</li>  <li>내용6</li>  <li>내용7</li>  <li>내용8</li> <li>내용9</li>  <li>내용10</li>
+    </ul> -->
+</body>
+</html>

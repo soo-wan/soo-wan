@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            width: 1000px;
+            display: flex;
+            height: 200px;
+            border:1px solid red;
+            justify-content: space-between;
+        }
+        .box {
+            width: 300px;
+            height: 200px;
+            border:1px dotted black;
+            position: relative; 
+            overflow: hidden; 
+        }
+
+        .caption{
+            background: black;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            top:0;
+            opacity: 0;
+            transition-duration: 0.5s;
+        }
+        .caption h1, .caption p{
+            color: white;
+            text-align: center;
+        }
+        .box:hover .caption{
+            /* transform: translateY(-200px); */
+            opacity: 0.6;
+        } 
+        .box:hover {
+            /* transform: scale(1.1); */
+            transform: translateY(-20px);
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="images/prod1.jpg">
+            <div class="caption">
+                <h1>상품 1</h1>
+                <p>상품1 : 설명 텍스트</p>
+                <p>가격 : 12,123원</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/prod2.jpg">
+            <div class="caption">
+                <h1>상품 2</h1>
+                <p>상품2 : 설명 텍스트</p>
+                <p>가격 : 12,123원</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/prod3.jpg">
+            <div class="caption">
+                <h1>상품 3</h1>
+                <p>상품3 : 설명 텍스트</p>
+                <p>가격 : 12,123원</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

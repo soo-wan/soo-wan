@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 정렬방식(justify-content, align-items 등)은
+    그 대상의 크기가 결정이 되야 적용되는것을 잊지 마세요..!!!!!!!!!!!!!!
+    */
+    height: 100vh;
+}
+.container {
+    width: 1000px;
+    border:1px solid blue;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card { 
+    border:1px solid red;
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style type="text/css"></style>
+    <script type="text/javaScript">
+        // DOM은 자바스크립트보다 제이쿼리에서 훨씬 활용도가 높다
+
+        // 선택자 및 필터링으로서의 DOM
+        // 1. 기본 필터링 메서드
+        // -filter() 메서드 사용 두 가지 형태
+        //  1)$(selector).filter(필터키워드)
+        $(function(){
+            // .filter(':even') -> 짝수번째꺼만
+            $('h3').filter(':even').css({backgroundColor:'black', color:'white'});
+            $('h3:even').css({backgroundColor:'black', color:'white'});
+        });
+        // 2) $(selector).filter( function(index){} );
+        $(function(){
+            $('h3').filter( 
+                function(index){
+                    return index%2 == 1
+                } 
+            ).css({backgroundColor:'blue', color:'white'});
+            //h3에 부여된 index 들이 차례로 filter에 적용되고, 익명함수에 의해 true, false로 적용됩니다.
+            //true 일때만 css가 적용됩니다.
+        });
+
+        // 2.문서 객체 탐색 체이닝과 종료
+        // 체이닝을 사용해 한 줄로 서로 다른 문서 객체에 스타일 적용 가능
+        //  -전체 배경은 오렌지색, 짝수들에 글자 빨간색
+        $(function(){
+            // $('h3').css('background', 'orange');
+            // $('h3').filter(':even').css('color', 'red');
+            // $('h3').css('background', 'orange').filter(':even').css('color', 'red');
+            // 두 style이 모두 하나의 selector에 적용될때 사용함
+
+            // $('h3').css('background', 'orange').$('h1').css('color', 'red'); //잘못된 사용
+
+            // 예제 2
+            // 전체 배경 오렌지색, 짝수번째 글자 빨강, 홀수번째 글자 흰색
+            // 따로 따로 지정
+            // $('h3').css('background', 'orange');
+            // $('h3:even').css('color', 'white');
+            // $('h3:odd').css('color', 'red');
+
+            // $('h3')
+            //     .css('background', 'orange')
+            //     .filter(':even').css('color', 'white')
+            //     .filter(':odd').css('color', 'red');
+            // $('h3').css('background', 'orange'); 이 문장이 실행되면 리턴 문서객체가 $('h3')이지만,
+            // filter(':even').css('color', 'white'); 여기까지 실행되어 리턴된 문서객체는 짝수번째의 h3들입니다.
+            // 따라서 마지막 필터링 filter(':odd').css('color', 'red');은 리턴된 짝수번째들을 대상으로 홀수번째를 골라냅니다.
+
+            //end() 를 이용하여 짝수번째 필터링을 제거후 다시 홀수번째 필터링을 적용해야 의도한 필터링이 진행됩니다.
+            // $('h3')
+            //     .css('background', 'silver')
+            //     .filter(':even').css('color', 'red')
+            //     .end()
+            //     .filter(':odd').css('color', 'blue');
+                // end() : 문서 객체 선택을 필터링 이전 한 단계 뒤로 돌리는 함수입니다.
+            
+            //필터링 대상에 다른 태그를 추가할 수 있다.
+            $('h3')
+            .css('background', 'silver')
+            .filter(':even').css('color', 'red')
+            .end()
+            .filter(':odd').css('color', 'blue')
+            .add('h2').css('border', '1px solid blue');
+        });
+    </script>
+</head>
+<body>
+    <!-- 문서개체 필터링 - 체이닝 - 종료 -->
+    <h3>Header - 0</h3>
+    <h3>Header - 1</h3>
+    <h3>Header - 2</h3>
+    <h3>Header - 3</h3>
+    <h3>Header - 4</h3>
+    <h3>Header - 5</h3>
+    <h2>Header - 6</h2>
+    <h2>Header - 7</h2>
+</body>
+</html>

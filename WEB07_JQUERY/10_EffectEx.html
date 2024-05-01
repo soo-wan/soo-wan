@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style type="text/css">
+        img {
+            width:  500px;
+            height: 350px;
+        }
+        div{
+            position: absolute;
+            left:0; top:0;
+            /* margin:3px;
+            width:100px;
+            height: 100px; 
+            float:left; */
+            display: none;
+        }
+    </style>
+
+    <script type="text/javaScript">
+        var imgNum = 0;
+        $(function(){
+            // $('div').eq(0).fadeOut(1000); 0~6
+            window.setInterval(function(){
+                for(var i=0; i<=5; i++)
+                    $('div').eq(i).fadeOut(1000);
+                $('div').eq(imgNum).fadeIn(1000);
+                imgNum++;
+                if(imgNum>5)imgNum=0;
+            }, 1500);
+        });
+    </script>
+</head>
+<body>
+    <div><img src="images/Desert.jpg"></div>
+    <div><img src="images/Hydrangeas.jpg"></div>
+    <div><img src="images/Chrysanthemum.jpg"></div>
+    <div><img src="images/Koala.jpg"></div>
+    <div><img src="images/Penguins.jpg"></div>
+    <div><img src="images/Tulips.jpg"></div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+#logo {
+    position: relative;
+    width:460px;
+    height: 90px;
+    margin: 0 auto;
+    text-align: left;
+    /* border: 1px dotted silver; */
+}
+#header {
+    position: relative;
+    width:460px;
+    margin: 0 auto;
+    height: 30px;
+    text-align: right;
+    /* border: 1px dotted silver; */
+}
+img {
+    vertical-align: middle;
+}
+#id {
+    position: relative;
+    width:460px;
+    height: 50px;
+    border: 1px solid gray;
+    line-height: 50px;
+    color: gray;
+    font-size: 120%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+#pw {
+    position: relative;
+    width:460px;
+    height: 50px;
+    border: 1px solid gray;
+    line-height: 50px;
+    color: gray;
+    font-size: 120%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+#email {
+    position: relative;
+    width:460px;
+    height: 50px;
+    line-height: 50px;
+    color: gray;
+    font-size: 100%;
+    margin: 0 auto;
+    border: 1px solid gray;
+    text-align: left;
+    border-radius: 5px;
+}
+#id input{ 
+    font-size: 90%;
+    border:none;
+    outline: none;
+}
+#pw input{ 
+    font-size: 90%;
+    border:none;
+    outline: none;
+}
+#email input{ 
+    font-size: 90%;
+    border:none;
+    outline: none;
+}
+
+#temp {
+    position: relative;
+    height: 10px;
+}
+
+#name {
+    position: relative;
+    width:460px;
+    height: 50px;
+    border: 1px solid gray;
+    line-height: 50px;
+    color: gray;
+    font-size: 120%;
+    margin: 0 auto;
+    border-radius: 5px 5px 0px 0px;
+}
+#name input{    
+    font-size: 90%;
+    border:none;
+    outline: none;
+}
+
+#phone {
+    position: relative;
+    width:460px;
+    height: 50px;
+    border: 1px solid gray;
+    line-height: 50px;
+    color: gray;
+    font-size: 120%;
+    margin: 0 auto;
+    border-radius: 0px 0px 5px 5px;
+}
+#phone input{    
+    font-size: 90%;
+    border:none;
+    outline: none;
+}
+
+#birth {
+    position: relative;
+    width:460px;
+    height: 50px;
+    border: 1px solid gray;
+    line-height: 50px;
+    color: gray;
+    font-size: 120%;
+    margin: 0 auto;
+}
+#birth input{    
+    font-size: 90%;
+    border:none;
+    outline: none;
+}
+
+#mobile {
+    position: relative;
+    width:460px;
+    height: 50px;
+    border: 1px solid gray;
+    line-height: 50px;
+    color: gray;
+    font-size: 120%;
+    margin: 0 auto;
+    /* border-radius: 5px; */
+}
+#mobile input{    
+    font-size: 90%;
+    border:none;
+    outline: none;
+}
+
+#gender {
+    position: relative;
+    width:460px;
+    height: 50px;
+    border: 1px solid gray;
+    color: gray;
+    font-size: 100%;
+    margin: 0 auto;
+    /* border-radius: 5px; */
+    /* float: left; */
+}
+
+#left{
+    position: absolute;
+    width:216px;
+    height: 33px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    left:0px;
+    top:8px;
+    margin-left: 8px;
+}
+
+#right{
+    position: absolute;
+    width:216px;
+    height: 33px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    right:0px;
+    top:8px;
+    margin-right: 8px;
+}
+
+#left div, #right div{
+    float:left;
+    text-align: center;
+    width: 107px;
+    height: 33px;
+    line-height: 33px;
+    font-size: 80%;
+}
+
+#left div:first-child, #right div:first-child {
+    border-right: 1px solid gray;
+}
+
+#agreement {
+    position: relative;
+    width:460px;
+    height: 50px;
+    border: 1px solid gray;
+    line-height: 50px;
+    color: gray;
+    font-size: 120%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+#agreement input{    
+    font-size: 90%;
+    border:none;
+    outline: none;
+}
+
+#check {
+    border-radius: 100px;
+}
+
+.text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 70%;
+    color: black;
+}
+
+.text2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    border:none;
+    font-size: 100%;
+    color: gray;
+}
+
+.text3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    border:none;
+    font-size: 70%;
+    color: green;
+}
+
+.btn_expand {
+    border:none;
+    outline: none;
+}
+
+.select {
+    display: none;
+}
+
+#button{
+    position: relative; 
+    width:460px; 
+    height:50px; 
+    background:green; 
+    color:white; 
+    text-align: center; 
+    line-height: 50px;  
+    font-size:110%; 
+    border-radius:3px; 
+    margin:20px auto; 
+    font-weight: bold;
+}

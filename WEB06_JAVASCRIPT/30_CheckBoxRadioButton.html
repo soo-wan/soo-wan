@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        img{
+            vertical-align: middle;
+            width: 15px;
+            height: 15px;
+        }
+    </style>
+    <script type="text/JavaScript">
+        function selectRadio(x){
+            //모든 라디오버튼을 미선택으로 변경
+            document.getElementById("r1").src = "images/radio1.png";
+            document.getElementById("r2").src = "images/radio1.png";
+            //선택된 라디오버튼을 선택으로 변경
+            document.getElementById("r" +x).src = "images/radio2.png";
+
+            if(x==1) document.getElementById('val').value = '남성';
+            else document.getElementById('val').value = '여성';
+        }
+
+        var chIndex = [false, false, false];
+        function selectCheck(x){
+            if(chIndex[x-1] == true){
+                document.getElementById("c" + x).src = "images/check2.png";
+                chIndex[x-1] = false;
+            }else{
+                document.getElementById("c" + x).src = "images/check1.png";
+                chIndex[x-1] = true;
+            }
+
+            var product = ['스포츠', '영화', '독서'];
+            var str = "";
+            for(var i=0; i<3; i++){
+                if(chIndex[i] == true)
+                    str += product[i] + " ";
+            }
+            document.getElementById("val2").value = str;
+        }
+    </script>
+</head>
+<body>
+    <table width="700" bgcolor="black" cellspacing="1">
+        <tr bgcolor="white" height="70">
+            <th width="150">성별</th>
+            <td width="350">
+                <!-- <input type="radio" name="" value=""> -->
+                남성&nbsp;<img src="images/radio1.jpg" id="r1"
+                class="gender" onclick="selectRadio(1)">&nbsp;&nbsp;&nbsp;
+                여성&nbsp;<img src="images/radio2.jpg" id="r2"
+                class="gender" onclick="selectRadio(2)">&nbsp;&nbsp;&nbsp;
+                <input type="text" id="val">
+            </td>
+        </tr>
+        <tr bgcolor="white" height="70">
+            <th width="150">취미</th>
+            <td width="350">
+                스포츠&nbsp;<img src="images/check1.jpg" id="c1"
+                class="hobby" onclick="selectCheck(1)">&nbsp;&nbsp;&nbsp;
+                영화&nbsp;<img src="images/check2.jpg" id="c2"
+                class="hobby" onclick="selectCheck(2)">&nbsp;&nbsp;&nbsp;
+                독서&nbsp;<img src="images/check2.jpg" id="c3"
+                class="hobby" onclick="selectCheck(3)">&nbsp;&nbsp;&nbsp;
+                <input type="text" id="val2">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

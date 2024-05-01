@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        //이미지를 클릭할때마다 1->2->3->4... 이미지 번호가 변하도록 코딩하세요
+        //이미지는 10.jpg 까지 있으면 10번 다음으로 다시 1번이 되게 실행합니다.
+        var num = 1;
+        function changeImg(){
+            num++;
+            if ( num > 10) num = 1;
+            document.getElementById("target").src = "images/" + num + ".jpg";
+        }
+    </script>
+</head>
+<body>
+    <img src="images/1.jpg" id="target" onclick="changeImg()">
+</body>
+</html>

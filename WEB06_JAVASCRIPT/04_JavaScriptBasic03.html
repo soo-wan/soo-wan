@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        //14. 배열
+        //여러개의 자료를 하나의 이름을 저장하고, 각각의 데이터를 번호를 붙여서 사용하기 위한 자료구조
+        //자료형은 따로 지정하지 않고, 자유롭게 사용합니다.
+        //배열의 크기도 따로 지정하지 않고 그때 그때 자료를 넣고 빼면서 사용합니다.
+        //배열의 하나의 요소를 다른 배열을 넣어서 이차원 배열처럼 사용도 합니다.
+        var array = [ 273, 'string', true, function(){ }, { a:100, b:200 }, [150, 170] ];
+        document.write("<h2> "+ array[0] +"</h2>");
+        document.write("<h2> "+ array[1] +"</h2>");
+        document.write("<h2> "+ array[2] +"</h2>");
+        document.write("<h2> "+ array[3] +"</h2>");
+        document.write("<h2> "+ array[4] +"</h2>");
+        document.write("<h2> "+ array[4].a +"</h2>");
+        document.write("<h2> "+ array[4].b +"</h2>");
+        document.write("<h2> "+ array[5] +"</h2>");
+        document.write("<h2> "+ array[5][0] +"</h2>");
+        document.write("<h2> "+ array[5][1] +"</h2>");
+        document.write("<h2> "+ array +"</h2>");
+
+        array[0] = 370;
+        document.write("<h2> "+ array[0] +"</h2>");
+
+        var arr = ['a', 'b', 'c'];
+        console.log('변경전 : ' + arr);
+        document.write("<h2> 변경 전"+ arr + "</h2>");
+
+        arr.push('d'); //배열의 끝에 요소를 추가
+        console.log('배열의 끝에 요소 추가 : ' + arr);
+        document.write("<h2> 변경 후"+ arr + "</h2>");
+        
+        arr.unshift('A'); //배열의 앞쪽에 요소를 추가
+        document.write("<h2> 변경 후"+ arr + "</h2>");
+
+        arr.splice(2, 1, 'B'); //index 2 ('b')의 위치에 한글자를 대체
+        document.write("<h2> 변경 후"+ arr + "</h2>");
+
+        //15. 자료형 변환
+        // - 다른 자료형 -> 숫자 변환 : Number() 함수 사용.
+        // - 다른 자료형 -> 문자열 변환 : String() 함수 사용.
+        var input = '12345';
+        var num = Number(input); //Number 함수에 입력해주는 값이 아라비아기호가 아닌 문자를 넣으면 Nan이 됩니다.
+        document.write("<h2> typeof(input) => "+ typeof(input) + "</h2>");
+        document.write("<h2> typeof(num) => "+ typeof(num) + "</h2>");
+
+        var str = String(12.123);
+        document.write("<h2> str : Numver -> string : "+ str + +" /typeof(str) : "+ typeof(str) + "</h2>");
+
+        // - 다른 자료형 -? Boolean : Boolean() 함수 사용
+        document.write("<h2> Boolean(0) -> "+ Boolean(0) + "</h2>");
+        document.write("<h2> Boolean(6736) -> "+ Boolean(6736) + "</h2>");
+        document.write("<h2> Boolean(NaN) -> "+ Boolean(NaN) + "</h2>");
+        document.write("<h2> Boolean(\'0\') -> "+ Boolean('0') + "</h2>");
+        document.write("<h2> Boolean(\'false\') -> "+ Boolean('false') + "</h2>"); 
+        document.write("<h2> Boolean(\'\') -> "+ Boolean('') + "</h2>");
+        document.write("<h2> Boolean(null) -> "+ Boolean(null) + "</h2>");
+        document.write("<h2> Boolean(undefined) -> "+ Boolean(undefined) + "</h2>");
+
+        //문자와 숫자들간의 연산 : 자동형변환 후 연산
+        document.write("<h2> '52' * 2 =  "+ ('52'*2) + "</h2>"); //104
+        document.write("<h2> '52' - 2 =  "+ ('52'-2) + "</h2>"); //50
+        document.write("<h2> '52' / 2 =  "+ ('52'/2) + "</h2>"); //26
+        document.write("<h2> '52' % 2 =  "+ ('52'%2) + "</h2>"); //0
+        document.write("<h2> '홍길동' -2 =  "+ ('홍길동' -2) + "</h2>"); //NaN
+        document.write("<h2> 50+273 =  "+ ('50'+273) + "</h2>"); //50273
+
+        // 16. 일치연산자
+        // 양변의 자료형은 틀리지만 자료형을 맞춰서 변환했을때 변환된 값이 같음
+        // == 일치 true
+        // != 불일치 true
+        document.write("<h2> \'\' == false -> "+ ('' == false) + "</h2>"); //true
+        document.write("<h2> \'\' == 0 -> "+ ('' == 0) + "</h2>"); //true
+        document.write("<h2> 0 == false -> "+ (0 == false) + "</h2>"); //true
+        document.write("<h2> 273 == \'273\' -> "+ (273 == '273') + "</h2>"); //true
+
+        //자료형 변환없이 비교 ===
+        document.write("<h2> \'\' == false -> "+ ('' === false) + "</h2>"); //false
+        document.write("<h2> \'\' == 0 -> "+ ('' === 0) + "</h2>"); //false
+        document.write("<h2> 0 == false -> "+ (0 === false) + "</h2>"); //false
+        document.write("<h2> 273 == \'273\' -> "+ (273 === '273') + "</h2>"); //false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

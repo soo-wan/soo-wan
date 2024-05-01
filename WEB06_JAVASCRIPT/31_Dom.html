@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        /*
+            문서객체모델(DOM, Document Object Model)
+                -넓은 의미 : 웹브라우저가 HTML 페이지를 인식하는 방식.
+                -좁은 의미 : document 객체와 관련된 객체의 집합
+                -HTML 페이지에 태그를 추가, 수정, 제거할 수 있습니다.
+            
+            DOM 관련 용어
+                -문서 객체:html or body 태그를 자바스크립트에서 이용할 수 있는 객체로 만들면 그것이 문서객체
+                -노드 : 각 요소(head, body, title, script, h1, HEADER...)    
+                  -요소 노드(Element Node) : HTML 태그
+                  -텍스트 노드(Text Node) : 요소노드 안에 들어 있는 글자
+                -정적으로 문서 객체를 생성한다의 의미
+                  : 웹페이지가 처음 HTML 페이지에 적혀있는 태그들을 읽으며 생성하는 것.
+                -동적으로 문서 객체를 생성한다의 의미
+                  : 자바스크립트를 사용해 원래 HTML 페이지에는 없는 문서 객체(태그 등)를 생성하는 것
+        */ 
+        function changeHeader() {
+            document.getElementById("header_1").innerHTML ="펭귄";
+            //getElementsByTagName('tagName') : tagName과 일치하는 문서객체를 배열로 가져옵니다.
+            //getElementsByName('name') : 태그의 name 속성이 name과 일치하는 문서객체를 배열로 가져옵니다.
+            //getElementsByClassName('className') : 태그의 className 속성과 일치하는 문서객체를 배열로 가져옵니다.
+            var h1tag = document.getElementsByTagName('h1');
+            h1tag[1].innerHTML = '코알라';
+        }
+        function createTag() {
+            //요소노드(h2)생성 -> 텍스트노드 생성 -> 텍스트노드를 요소노드(h2)에 추가(삽입) -> 요소노드를 body에 추가(삽입)
+            //텍스트를 포함하고 있는 태그를 생성할때
+
+            //h2 태그 생성
+            var header = document.createElement('h2');
+            //생성된 태그는 header 변수에 저장해둡니다. 아직은 화면에 보여지지 않습니다.
+
+            //Text 노드 생성
+            var textNode = document.createTextNode("Hello~ Dom~");
+
+            //Text 노드를 H2 태그에 삽입
+            //만들고자 하는 것이 <h2>Hello~ Dom~!</h2> 이므로, h2 태그 안에 Hello~Dom~!을 넣습니다.
+            header.appendChild(textNode);
+            //문서객체(h2)에 원래 내용이 있다면 그 끝에 이어서, 원래내용이 없다면 처음의 내용으로 삽입
+
+            //body에 header 객체를 원래 내용들의 맨끝에 추가 또는 원래내용이 없다면 처음의 내용으로 추가
+            document.body.appendChild(header);
+        }
+
+        function createImg() {
+            var imgTag = document.createElement('img');
+            imgTag.src = "images/koala.jpg";
+            imgTag.width = 300;
+            document.body.appendChild(imgTag);
+        }
+
+        //appendCjild, createElement 없이 innerHTML로 새로운 내용을 추가
+        function createUL() {
+            var output = '<br>';
+            output += '<ul>';
+            output += '<li><h2>JavaScript</h2></li>';
+            output += '<li><h2>jQuery</h2></li>';
+            output += '<li><h2>Ajax</h2></li>';
+            output += '</ul>';
+            output += '<br>';
+            document.body.innerHTML += output; //원래 내용에 이어 붙이기(+=)로 추가
+        }
+
+        function removeDom() {
+            var willRemove = document.getElementById("header_1");
+            willRemove.parentNode.removeChild(willRemove);
+            // document.body.removeChild(willRemove);
+        }
+
+    </script>
+</head>
+<body>
+    <h1 id="header_1">HEADER-1</h1>
+    <div><h1 id="header_2">HEADER-2</h1></div>
+    <h1 id="clock"></h1>
+    <hr>
+    <h3>기존 태그의 변경 <input type="button" value="제목변경" onclick="changeHeader();"></h3>
+    <h3>없던 태그의 추가(H2) <input type="button" value="문서객체 생성(h2)" onclick="createTag();"></h3>
+    <h3>없던 태그의 추가(img) <input type="button" value="문서객체 생성(img)" onclick="createImg();"></h3>
+    <h3>innerHTML을 이용해서 ul 태그 추가<input type="button" value="문서객체 생성(ul)" onclick="createUL();"></h3>
+    <h3>기졵 태그의 삭제 <input type="button" value="문서객체제거" onclick="removeDom();">&nbsp;</h3>
+    <hr>
+</body>
+</html>

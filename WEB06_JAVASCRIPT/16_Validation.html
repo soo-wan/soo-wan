@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/join.js"></script>
+    <script type="text/JavaScript">
+        function joinCheck(){
+            // if(document.getElementById('userid').value=""){}
+            if(document.frm.userid.value == ""){
+                alert("아이디는 필수입력사항입니다");
+                document.frm.userid.focus(); // 해당 입력란에 커서를 옮깁니다
+                return false;
+            }
+            if(document.frm.pwd.value == ""){
+                alert("비밀번호는 필수입력사항입니다");
+                document.frm.pwd.focus(); 
+                return false;
+            }
+            if(document.frm.pwd.value != document.frm.pwd_check.value){
+                alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+                document.frm.pwd.focus(); 
+                return false;
+            }
+            if(document.frm.username.value == ""){
+                alert("이름은 필수입력사항입니다");
+                document.frm.username.focus(); 
+                return false;
+            }
+            if(document.frm.email.value == ""){
+                alert("이메일은 필수입력사항입니다");
+                document.frm.email.focus(); 
+                return false;
+            }
+            if(document.frm.phone.value == ""){
+                alert("전화번호는 필수입력사항입니다");
+                document.frm.phone.focus(); 
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap" align="center">
+        <h1>사용자 등록</h1>
+        <form name="frm" method="post" action="16_result.html">
+            <table>
+                <tr><th>USER_ID</th>
+                    <td><input type="text" name="userid" id="userid"></td>
+                </tr>
+                <tr><th>PASSWORD</th>
+                    <td><input type="password" name="pwd" id="pwd"></td>
+                </tr>
+                <tr><th>RETYPE PW</th>
+                    <td><input type="password" name="pwd_check" id="pwd_check">
+                    </td></tr>
+                <tr><th>USER NAME</th>
+                    <td><input type="text" name="username" id="username">
+                    </td>
+                </tr>
+                <tr><th>EMAIL</th>
+                    <td><input type="text" name="email" id="email">
+                </td></tr>
+                <tr><th>PHONE</th>
+                    <td><input type="text" name="phone" id="phone">
+                </td></tr>
+            </table>
+            <input type="submit" value="등록" onclick="return joinCheck();"> 
+            <input type="reset" value="다시입력">
+            <!-- 
+                -submit을 클릭하면 form 내부에 입력란들에 내용들이 
+                form - action에 설정된곳으로 전송됨
+                -이때 전송내용을 외부로 노출하지 않으려면 method에 post를 입력
+                -method의 기본값은 "get"이며 입력해도 되고 안해도 get으로 인식
+            -->
+        </form>
+    </div>
+</body>
+</html>

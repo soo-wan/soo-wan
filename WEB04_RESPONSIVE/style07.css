@@ -1,0 +1,33 @@
+body{
+    margin:0; 
+}
+.container{
+    width: 100vw;
+    height: 400px;
+    border:10px solid black;
+    display: flex; 
+    box-sizing: border-box;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin:2px;
+}
+#container1 {
+    flex-wrap : wrap;
+    /* align-items: flex-end; */
+    align-content: flex-start;
+}
+#container2 {
+    flex-wrap : wrap;
+    align-content: flex-end;
+}
+#container3 {
+    flex-wrap : wrap;
+    align-content: space-around;
+}
+#container4 {
+    flex-wrap : wrap;
+    align-content: space-between;
+}

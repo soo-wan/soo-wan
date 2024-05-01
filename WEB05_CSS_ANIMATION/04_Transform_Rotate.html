@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .origin{
+            width: 210px; 
+            height: 200px;
+            border:1px solid black;
+            float:left;
+            margin:40px;
+        }
+        .rotate1, .rotate2{transition: 1s;}
+        .rotate1{transform-origin: left top;}
+        .rotate2{transform-origin: right bottom;}
+        .rotate1:hover{transform: rotate(40deg);}
+        .rotate2:hover{transform: rotate(-40deg);}
+        /* deg는 우리가 알고 있는 각도(360도 한바퀴)로 해석해도 똑같이 적용됩니다. */
+
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="rotate1"><img src="images/fruit.jpg"></div>
+    </div>
+    <div class="origin">
+        <div class="rotate2"><img src="images/fruit.jpg"></div>
+    </div>
+</body>
+</html>

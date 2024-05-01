@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        var today = new Date();
+        var year = today.getFullYear();
+        var month = today.getMonth()+1;
+        var date1 = today.getDate();
+        var y = Number( prompt("년도를 입력하세요", year) );
+        var m = Number( prompt("월을 입력하세요", month) );
+        var d = Number( prompt("일을 입력하세요", date1) );
+        
+        // 1년부터 입력한 년도의 전년도까지의 날짜들을 합산
+        //윤년계산
+        var days = 365 * (y-1); 
+        for ( var i=1; i < y; i++){
+            if( (i%4==0) && (i%100 != 0) || (i%400==0) ){
+                days++;
+            }
+        }
+        
+        var mdays = [0,31,28,31,30,31,30,31,31,30,31,30,31];
+        if( (y%4 == 0) && (y%100 != 0) || (y%400==0) ){
+            mdays[2] = 29;
+        }
+
+        for(var i=1; i<=m-1; i++){
+            days += mdays[i];
+        }
+
+        days += d;
+        var weekday = days % 7;
+        
+    </script>
+</head>
+<body>
+    <script type="text/JavaScript">
+        document.write("<h2>" + y + "년 " + m + "월 " + d +"일은</h2>");
+        if(weekday == 1){ document.write("<h2>월요일입니다</h2>"); }
+        else if(weekday == 2){ document.write("<h2>화요일입니다</h2>"); }
+        else if(weekday == 3){ document.write("<h2>수요일입니다</h2>"); }
+        else if(weekday == 4){ document.write("<h2>목요일입니다</h2>"); }
+        else if(weekday == 5){ document.write("<h2>금요일입니다</h2>"); }
+        else if(weekday == 6){ document.write("<h2>토요일입니다</h2>"); }
+        else if(weekday == 0){ document.write("<h2>일요일입니다</h2>"); }
+    </script>
+</body>
+</html>

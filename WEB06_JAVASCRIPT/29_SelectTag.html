@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #title{
+            position: relative;
+            width: 200px;
+            height: 30px;
+            border:1px solid gray;
+            line-height: 30px;
+            font-size: 120%;
+            font-weight: bold;
+        }
+        #num{
+            position: absolute;
+            width: 120px;
+            height: 30px;
+            border:1px solid red;
+            top:0; left:0;
+        }
+        #arrow{
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border:1px dotted blue;
+            background-image: url(images/ico_movie_171115.png);
+            background-position: -275px -320px;
+            right: 0; top:0;
+        }
+        #dropMenu{
+            position: absolute;
+            top:30px;
+            left:0;
+            background: white;
+            width: 300px;
+            height: 250px;
+            border: 1px solid gray;
+            box-shadow: 2px 2px 5px gray;
+            overflow: scroll;
+            visibility: hidden;
+        }
+        #dropMenu div{
+            width: 100%;
+            height: 45px;
+            font-weight: bold;
+            line-height: 45px;
+        }
+        #dropMenu div:hover{
+            background: #d14abf;
+            color:white;
+        }
+    </style>
+    <script type="text/JavaScript">
+        var flag = false;
+        function clickTitle(){
+            if(flag==true){
+                flag=false;
+                document.getElementById("dropMenu").style.visibility = 'hidden';
+            } else{
+                flag=true;
+                document.getElementById("dropMenu").style.visibility = 'visible';
+            }
+        }
+        function selectNum(num) {
+            document.getElementById("num").innerHTML = num;
+        }
+    </script>
+</head>
+<body>
+    <div id="title" onclick="clickTitle()">
+        <div id="num">+82</div>
+        <div id="arrow"></div>
+        <div id="dropMenu">
+            <div onclick="selectNum('+1')">+1 &nbsp;&nbsp;&nbsp; Canada</div>
+            <div onclick="selectNum('+63')">+63 &nbsp;&nbsp;&nbsp; Philippines</div>
+            <div onclick="selectNum('+62')">+62 &nbsp;&nbsp;&nbsp; Indonesia</div>
+            <div onclick="selectNum('+84')">+84 &nbsp;&nbsp;&nbsp; Vietnam</div>
+            <div onclick="selectNum('+55')">+55 &nbsp;&nbsp;&nbsp; Brazil</div>
+            <div onclick="selectNum('+85')">+85 &nbsp;&nbsp;&nbsp; HongKong</div>
+            <div onclick="selectNum('+82')">+82 &nbsp;&nbsp;&nbsp; Korea</div>
+        </div>
+    </div>
+    <!-- <hr>
+    <select>
+        <option>+82 대한민국</option>
+        <option>+30 그리스</option>
+        <option>+64 뉴질랜드</option>
+        <option>+33 프랑스</option>
+    </select> -->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        var ans = prompt("숫자하나를 입력하세요", "10");
+        var num = Number( ans );
+
+        // if( num %2 == 0 ){
+        //    document.write("<h2>입력한 숫자는 짝수입니다.</h2>"); 
+        // }
+        // var i = num % 2;
+        // if( i == 1){
+        //    document.write("<h2>입력한 숫자는 홀수입니다.</h2>"); 
+        // }
+        
+        // if( num %2 == 0 ){
+        //    document.write("<h2>입력한 숫자는 짝수입니다.</h2>"); 
+        // } else{
+        //    document.write("<h2>입력한 숫자는 홀수입니다.</h2>"); 
+        // }
+        
+        // if(num > 0){
+        //     document.write("<h2>입력한 숫자는 양수입니다.</h2>");  
+        // }else if(num<0){
+        //     document.write("<h2>입력한 숫자는 음수입니다.</h2>"); 
+        // }else{
+        //     document.write("<h2>입력한 숫자는 0입니다.</h2>"); 
+        // }
+
+        // if(num>=90 && num<=100){
+        //     document.write("<h2>입력한 점수는 A학점입니다.</h2>"); 
+        // }else if(num>=80 && num<=89){
+        //     document.write("<h2>입력한 점수는 B학점입니다.</h2>"); 
+        // }else if(num>=70 && num<=79){
+        //     document.write("<h2>입력한 점수는 C학점입니다.</h2>"); 
+        // }else if(num>=60 && num<=69){
+        //     document.write("<h2>입력한 점수는 D학점입니다.</h2>"); 
+        // }else{
+        //     document.write("<h2>입력한 점수는 F학점입니다.</h2>"); 
+        // }
+
+        if(num>=90){
+            document.write("<h2>입력한 점수는 A학점입니다.</h2>"); 
+        }else if(num>=80){
+            document.write("<h2>입력한 점수는 B학점입니다.</h2>"); 
+        }else if(num>=70){
+            document.write("<h2>입력한 점수는 C학점입니다.</h2>"); 
+        }else if(num>=60){
+            document.write("<h2>입력한 점수는 D학점입니다.</h2>"); 
+        }else{
+            document.write("<h2>입력한 점수는 F학점입니다.</h2>"); 
+        }
+        
+        var result = (num>70? "합격" : "불합격");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

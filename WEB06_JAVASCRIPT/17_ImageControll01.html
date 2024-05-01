@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function changeImg1(){
+            // alert("마우스가 이미지 위에 있어요");
+            document.getElementById("img1").src = "images/3.jpg";
+        }
+        function changeImg3(){
+            document.getElementById("img1").src = "images/1.jpg";
+        }
+
+        function changeImg2(){
+            document.getElementById("img2").src = "images/4.jpg";
+        }
+        function changeImg4(){
+            document.getElementById("img2").src = "images/2.jpg";
+        }
+    </script>
+</head>
+<body>
+    <img src="images/1.jpg" id="img1" onmouseover="changeImg1()" onmouseout="changeImg3()">
+    <img src="images/2.jpg" id="img2" onmouseover="changeImg2()" onmouseout="changeImg4()">
+    <!-- 
+        1. jpg에 마우스를 올리면 3.jpg로 변환, 
+           jpg에 마우스를 올리면 4.jpg로 변환
+        2. 마우스가 빠지나가면 다시 원래대로 변환
+     -->
+</body>
+</html>

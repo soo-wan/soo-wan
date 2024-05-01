@@ -1,0 +1,26 @@
+.container{
+    width: 300px;
+    height: 300px;
+    border:1px solid black;
+}
+.box{
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    margin:2px;
+}
+.container{
+    display: flex;
+}
+#container1{
+    justify-content: center ;
+}
+#container2{
+    justify-content: flex-end;
+}   
+#container3{
+    justify-content: space-between;
+}
+#container4{
+    justify-content: space-around;
+}

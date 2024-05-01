@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        // 2. location 객체
+        // 브라우저의 주소 표시줄과 관련된 객체
+        // 프로토콜의 종류, 호스트 이름, 문서 위치등의 정보를 가짐
+        // 페이지를 링크나 주소창을 이용하지 않고 이동할 때 많이 사용
+
+        // 자바스크립트 명령으로 페이지 이동 방법 4가지
+        // location = "https://www.naver.com";
+        //  location.href = "https://www.naver.com"; // 가장 많이 사용
+        // location.assign("https://www.naver.com");
+        // location.replace("https://www.naver.com"); // 뒤로 가기 버튼을 사용할 수 없음.
+
+        function move(){
+            location.href = 'https://www.daum.net';
+        }
+
+        // - 자바스크립트 명령으로 현재 페이지를 새로고침하는 방법
+        // location = location;
+        // location.href = location.href; 
+        // location.assign(location);
+        // location.replace(location); 
+        // location.reload();
+        var output = '';
+        for(var key in location){
+            output += '<h2> *' + key + ' : ' + location[key] + '</h2>';
+        }
+        document.write(output);
+    </script>
+</head>
+<body>
+    <input type="button" value="다음으로 이동" onclick="move();">
+    <input type="button" value="다음으로 이동"  
+    onclick = "location.href='https://www.daum.net'">
+</body>
+</html>

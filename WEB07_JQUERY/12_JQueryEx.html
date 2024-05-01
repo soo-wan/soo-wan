@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="script/jquery.innerfade.js"></script>
+    <style type="text/css">
+        #tabs{
+            position: relative;
+            width : 1235px; 
+            height: 30px;
+            border : 3px solid blue;
+            box-sizing: border-box;
+            white-space: nowrap;  
+            margin: 0 auto;
+            /* 텍스트가 줄 바꿈 없이 한 줄로 유지 */
+        }
+        #tabs div{
+            /* position: absolute; */
+            width : 200px;
+            height: 20px;
+            display: inline-block; /* 추가 */
+            box-sizing: border-box;
+            text-align: center; /* 가운데 정렬 */
+            line-height: 20px; /* 수직 가운데 정렬 */
+            cursor: pointer; /* 포인터 모양 변경 */
+            margin: 0 auto;
+        }
+        #content{
+            position: absolute;
+            width : 1200px;
+            height: 600px;
+            top : 50px;
+            left : 300px;
+            border : 3px solid red;
+            margin : 0 auto;
+            display: none;
+        }
+        .contents{
+            width : 1200px;
+            height: 600px;
+        }
+    </style>
+    <script type="text/javaScript">
+        $(function(){
+            $('#tabs div:eq(0)').css('background', '#ebaa55');
+            $('#tabs div:eq(1)').css('background', '#55ebd1');
+            $('#tabs div:eq(2)').css('background', '#4fbde3');
+            $('#tabs div:eq(3)').css('background', '#6ebe6d');
+            $('#tabs div:eq(4)').css('background', '#95a096');
+            $('#tabs div:eq(5)').css('background', '#ed8d2a');
+            // content 들에 배경색을 탭메뉴와 맞춰주세요
+            // 메뉴를 클릭하면 해당 화면이 화면에 보이게 코딩합니다.
+
+            $('#content div:eq(0)').css('background', '#ebaa55');
+            $('#content div:eq(1)').css('background', '#55ebd1');
+            $('#content div:eq(2)').css('background', '#4fbde3');
+            $('#content div:eq(3)').css('background', '#6ebe6d');
+            $('#content div:eq(4)').css('background', '#95a096');
+            $('#content div:eq(5)').css('background', '#ed8d2a');
+        });
+    </script>
+</head>
+<body>
+    <div id="tabs">
+        <div>Menu A</div>
+        <div>Menu B</div>
+        <div>Menu C</div>
+        <div>Menu D</div>
+        <div>Menu E</div>
+        <div>Menu F</div>
+    </div>
+    <div id="content">
+        <div class="contents" id="content1">Content A</div>
+        <div class="contents" id="content2">Content B</div>
+        <div class="contents" id="content3">Content C</div>
+        <div class="contents" id="content4">Content D</div>
+        <div class="contents" id="content5">Content E</div>
+        <div class="contents" id="content6">Content F</div>
+    </div>
+</body>
+</html>

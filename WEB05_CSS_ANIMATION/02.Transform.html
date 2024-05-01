@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .origin{
+            width: 200px; 
+            height: 134px;
+            border:1px solid black;
+            float:left;
+            margin:40px;
+        }
+        .movex, .movey, .movexy{
+            /* position: relative; */
+            transition-duration: 1s;
+            transition-delay: 0.3s;
+        }
+        .movex:hover{
+            /* left:50px; */
+            transform: translateX(50px);
+        }
+        .movey:hover{
+            transform: translateY(50px);
+        }
+        .movexy:hover{
+            transform: translate(50px, 50px);
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        변형(애니메이션) 함수(function)(2D)
+        1.translate(X,Y) : 지정한 크기만큼 x축과 y축으로 이동
+        2.translateX(X) : 지정한 크기만큼 x축으로 이동
+        3.translateY(Y) : 지정한 크기만큼 y축으로 이동
+
+     -->
+    <div class="origin">
+        <div class="movex"><img src="images/bus.jpg"></div>
+    </div>
+    <div class="origin">
+        <div class="movey"><img src="images/bus.jpg"></div>
+    </div>
+    <div class="origin">
+        <div class="movexy"><img src="images/bus.jpg"></div>
+    </div>
+</body>
+</html>

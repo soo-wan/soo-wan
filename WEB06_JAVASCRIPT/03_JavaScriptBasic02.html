@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        // 자바스크립트의 함수(자바의 메서드)
+        function abc() {
+            document.write("<h2>자바스크립트의 일반적인 함수입니다. 자바처럼 호출합니다</h2>");
+        }
+        abc();
+        function abc2() {
+            alert("자바스크립트의 일반적인 함수입니다. 버튼으로 호출합니다")
+        }
+        
+        // ★★★★★★ 자바스크립트 "변수"의 특별한 기능 ★★★★
+        // 자바스크립트의 변수는 함수도 저장가능합니다.
+        // 자바스크립트는 평소 사용하는 함수가 자바의 스태틱 함수(메서드)이며 생성후 자요롭게 호출하여 사용합니다. 또한 다음과 같이 만들어지는 함수를 변수에 담아서 사용하기도 합니다.
+        var fv1 = function(){
+            document.write("<h2>함수를 변수에 저장했어요 그리고 변수이름으로 호출합니다.</h2>");
+        }
+        //이름이 없는 함수를 변수에 저장하여 변수이름을 함수이름인것처럼 사용하여 호출합니다.
+        fv1();
+        var fv2 = function(){
+            alert("함수를 변수에 저장했어요. 그리고 변수이름으로 호출합니다.")
+        }
+
+        // 8. 복합 대입 연산자 : +=, -=, *=, /=, %=
+        var value = 10;
+        value += 10; // value = value + 10;
+        document.write("<h2> "+ value +"</h2>");
+
+        value = "Hello";
+        value += " World";
+        document.write("<h2> "+ value +"</h2>");
+
+        // 9. 증감 연산자
+        var number = 10;
+        //number++;
+        document.write("<h2> "+ (++number + 5) +"</h2>"); //15
+        number = 10;
+        document.write("<h2> "+ (number++ + 5) +"</h2>"); //16
+        //출력은 15, 현재위치에서 사용은 16으로 사용
+        document.write("<h2> "+ (number) +"</h2>"); //11
+
+        // 10. 변수의 특징과 변수들간의 연산
+        // - 변수는 가장 마지막에 대입한 값을 기억합니다.
+        // - 문자들간의 + 연산은 이어붙이기 연산입니다.
+        // - 문자와 숫자간의 + 연산도 이어붙이기 연산이 되어 최종 문자결과가 만들어집니다.
+        var cup = 'Coffee';
+        cup = 'Green Tea';
+        cup = "Water";
+        document.write('<h2>Drink ' + cup + '...!!!</h2>');
+        var number = 10;
+        document.write('<h2>숫자 값 : ' + number + '</h2>');
+        var num = 1234 + ""; // num 변수에는 숫자 1234가 아닌 "1234"가 저장됩니다.
+
+        // 11. 자료형 검사
+        // 문자열
+        document.write('<h2>홍길동 : ' + typeof("홍길동") + '</h2>');
+        // 숫자
+        document.write('<h2>1234 : ' + typeof(1234) + '</h2>');
+        document.write('<h2>1234.123 : ' + typeof(1234.123) + '</h2>');
+        // Boolean
+        document.write('<h2>true : ' + typeof(true) + '</h2>');
+        // 함수
+        document.write('<h2>function(){} : ' + typeof(function(){}) + '</h2>');
+
+        // 12. 자바스크립트에서 사용하는 객체(사용자 정의)
+        // - 자바스크립트에는 클래스라는 개념이 쓰지 않고 사용됩니다.(그냥 없다고 생각해도 무방)
+        // - 클래스형태로 만들어지지 않는 "자유형태의 객체"가 사용됩니다.
+        // - 하나의 변수안에 여러 멤버변수(속성)와 멤버함수를 생성해놓고 객체라고 부릅니다.(멤버함수도 딱히 자주 사용하지는 않습니다)
+        var objectVar = {
+            a:10, 
+            b:20,
+            c:function() {
+                document.write("객체 안에 있는 멤버 함수입니다.");
+            }
+        };
+        // 객체변수 objectVar에 객체를 저장 -> 그 객체 안에는 a와 b라는 멤버변수가 존재합니다.
+        // 각 멤버변수의 값은 a<-10 b<-20을 저장합니다.
+        document.write('<h2>' + typeof({a:10, b:20}) + '</h2>');
+        document.write('<h2>' + typeof(objectVar) + '</h2>');
+
+        //private, public의 규칙도 없습니다.
+        document.write('<h2>objectVar.a : ' + objectVar.a+ '</h2>');
+        document.write('<h2>objectVar.b : ' + objectVar.b+ '</h2>');
+        objectVar.c();
+        document.write('<h2>objectVar : ' + objectVar+ '</h2>');
+
+        //13. 자바스크립트 변수의 특별한 기능 두번째 (첫번째:함수저장 기능)
+        //변수의 선언 없이도 변수의 사용이 가능합니다.
+        number = 100;
+        document.write("<h2>number 변수 값 : " + number + "</h2>");
+
+        //다만 위와 같은 경우도 값이 대입되지 않으면 결과는 Undefined가 됩니다.
+        //document.write("<h2>number 변수 값 : " + number2 + "</h2>"); //에러발생
+        document.write("<h2>typeof(number2) : " + typeof(number2) + "</h2>");
+        //undefined
+
+        //변수값이 undefined가 되는 경우
+        //변수는 생성했지만 값을 대입하지 않았을때
+        var variable2
+        document.write("<h2>2. : " + variable2 + "</h2>"); //undefined
+        document.write("<h2>2. : " + typeof(variable2) + "</h2>"); //undefined
+
+    </script>
+</head>
+<body>
+    <script type="text/JavaScript">
+        // 함수의 호출과 정의는 head body 어느곳에서 호출이 가능합니다.
+        // 보통은 head에서 정의하고 body에서 호출합니다. 
+    </script>
+    <input type="button" value="클릭" onclick="abc2()">
+    <input type="button" value="클릭" onclick="fv2()">
+</body>
+</html>

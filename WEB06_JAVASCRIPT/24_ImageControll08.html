@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #view{
+            position: relative;
+            width: 170px;
+            height: 255px;
+            border : 3px solid blue;
+        }
+        .imgs{
+            position: absolute;
+            top:0; left:0;
+            opacity: 0;
+            transition: 1s;
+        }
+        .imgs:first-child{opacity: 1;}
+    </style>
+
+    <script type="text/JavaScript">
+        var num = 1;
+        var timer;
+        function stop(){
+            window.clearInterval(timer);
+        }
+
+        function start(){
+            timer = window.setInterval(function(){
+                num++;
+                if(num>9) num=1;
+                // 모든 이미지의 투명도를 0으로
+                for(var i=1; i<=10; i++)
+                    document.getElementById('imgs' + i).style.opacity = '0';
+                // 현재 이미지만 투명도를 1로 설정
+                document.getElementById('imgs' + num).style.opacity = '1';
+            }, 1500);
+        }
+    </script>
+</head>
+<body onload="start()">
+    <div id="view" onmouseover="stop()" onmouseout="start()">
+        <div class="imgs" id="imgs1"><img src="images/1.jpg"></div>
+        <div class="imgs" id="imgs2"><img src="images/2.jpg"></div>
+        <div class="imgs" id="imgs3"><img src="images/3.jpg"></div>
+        <div class="imgs" id="imgs4"><img src="images/4.jpg"></div>
+        <div class="imgs" id="imgs5"><img src="images/5.jpg"></div>
+        <div class="imgs" id="imgs6"><img src="images/6.jpg"></div>
+        <div class="imgs" id="imgs7"><img src="images/7.jpg"></div>
+        <div class="imgs" id="imgs8"><img src="images/8.jpg"></div>
+        <div class="imgs" id="imgs9"><img src="images/9.jpg"></div>
+        <div class="imgs" id="imgs10"><img src="images/10.jpg"></div>
+    </div>
+</body>
+</html>

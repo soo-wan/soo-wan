@@ -1,0 +1,101 @@
+#logo{
+    position: relative;
+    width:460px;
+    margin: 0 auto;
+    height:90px; 
+    text-align: left;
+    border:1px dotted silver;
+}
+
+#header{
+    position: relative;
+    width:460px;
+    margin: 0 auto;
+    height:30px;
+    text-align: right;
+    border:1px dotted silver;
+}
+
+img{ 
+    vertical-align: middle;
+}
+
+#id{
+    position: relative;
+    width:460px; 
+    height:50px; 
+    border:1px solid gray;
+    line-height: 50px;
+    color:gray; 
+    font-size:120%;
+    margin:0 auto;
+}
+#pw{
+    position: relative;
+    width:460px; 
+    height:50px; 
+    border:1px solid gray;
+    line-height: 50px;
+    color:gray; 
+    font-size:120%;
+    margin:0 auto;
+}
+#id input{ 
+    font-size:90%;
+    border:none;
+    outline:none;
+}
+#pw input{ 
+    font-size:90%;
+    border:none;
+    outline:none;
+}
+#email{
+    position: relative; 
+    width:460px; 
+    height:50px; 
+    line-height: 50px ; color:gray; 
+    font-size:100%; 
+    margin:0 auto;
+    border:1px solid gray;
+    text-align: left;
+}
+#email input{ 
+    font-size:90%;
+    border:none;
+    outline:none;
+}
+
+#personal_info{position: relative; width:460px; height:250px; margin: 0 auto; border:1px solid gray; border-radius: 5px; margin-top:10px;}
+
+#personal_info>div{position: relative; width:460px; height:50px; border-bottom:1px solid gray; line-height: 50px ; color:gray; font-size:120% }
+
+#personal_info div input{ font-size: 90%; border:none; outline: none;}
+
+#left{ position:absolute; width:216px; height:33px; border:1px solid gray; border-radius: 3px;  top:5px; margin-left: 8px; left:0px; top:8px;}
+
+#right{ margin-right: 8px; right:0px; position:absolute; width:216px; height:33px; border:1px solid #999999; border-radius: 3px;  top:8px; } 
+
+#left div, #right div{ float: left; text-align: center; width:107px; height:33px; line-height: 33px;font-size: 80%;}
+
+#left div:first-child, #right div:first-child{ border-right:1px solid #999999;}
+
+#agree{position: relative; width:460px; height:50px; border:1px solid #999999; line-height: 50px ; color:#999999; font-size:100%; border-radius:3px; margin:10px auto; }
+
+#button{position: relative; width:460px; height:50px; background:green; color:white; text-align: center; line-height: 50px ;  font-size:110%; border-radius:3px; margin:20px auto; font-weight: bold;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

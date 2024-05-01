@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        /* 
+        함수(Function) :
+         -자바의 메서드와 같은 뜻의 문법 요소입니다.
+
+         -반복 되거나 단위로 구성될 명령을 하나의 이름으로 묶어놓고, 명령이 필요할때 이름을 불러 실행하는 구조입니다.
+
+         -보통 head 태그안의 스크립트 영역에서 함수를 정의해놓고, body의 이벤트에 연결하여 실행시킵니다. 버튼이 클릭되면 실행되는 자바스크립트 함수의 정의
+         -자바스크립트의 함수는 "선언적 함수"와 "익명 함수"가 있습니다.
+         -선언적 함수는 생성(정의)할때, 호출할 이름을 부여해서 만드는 함수를 의미하고
+         -익명 함수는 이름을 지정하지 않은 상태로 만들어서, 함수 자체를 변수에 저장하여 변수 이름으로 사용하는 함수를 의미합니다. 자바에서 익명함수의 구조와 비슷한것은 람다식입니다.
+        */
+       //익명 함수
+       var a1 = function(){/*내용1*/};
+       //이름없는 함수를 변수에 저장해서 그 변수이름이 마치 함수이름인것 처럼 사용
+       var a2 = function(){/*내용1*/};
+       //같은 내용의 함수를 다른 변수에 저장해서 사용할 수 있습니다.
+
+       var a4 = a1;
+       //함수의 내용을 다른 변수에 저장할 수 있습니다.
+       a1();
+       a2();
+       a3();
+       //위 함수 세개의 호출은 같은 내용을 실행합니다.
+
+       //선언적함수
+       function a3(){
+         
+       } // 함수 생성과 동시에 이름이 결정돼서 사용되는 함수 : 이름을 바꿀수 없습니다.
+
+       //함수는 익명 함수이든 선언적 함수이든 head 영역의 script 태그 안에서 또는 body 영역의 script 태그 안에서 어디서든 호출하는 경우가 대부분입니다.
+       //body에서 함수생성을 할 수 없는것은 아닙니다.
+
+       //함수 사용에 따른 분류 #1 - 매개변수도 리턴값도 없는 경우-----------
+       function func1() {
+            document.write("<h2>선언적함수 - 매개변수 X, 리턴값 X</h2>");
+            document.write("<h2>선언적함수 - 매개변수 X, 리턴값 X</h2>");
+            document.write("<h2>선언적함수 - 매개변수 X, 리턴값 X</h2>");
+            document.write("<h2>선언적함수 - 매개변수 X, 리턴값 X</h2>");
+       }
+       func1();
+
+       //함수 사용에 따른 분류 #2 - 매개변수O 리턴값 X --------------
+       var func2 = function(a, b) { // a,b -> 매개변수
+            document.write("<h2>전달된 인수 : " + a + ", " +  b + 
+                " 의 합계 : " + (a+b) + " </h2>");
+       }
+       func2(10, 30); //10, 30 전달인수
+       //호출하는 곳에서는 함수에서 필요한 인수를 전달하고, 함수에서는 전달된 인수를 변수에 저장해서 활용
+
+       var func3 = function(a, b) { //function func3(a,b){}
+            var c;
+            c = a;
+            a = b;
+            b = c;
+            document.write("<h2>a : " + a + ", b : " +  b + " </h2>");
+       }
+
+       // 매개변수와 전달인수의 갯수가 맞지 않는 경우
+       function square(x){
+            document.write("<h2>" + x + " * " +  x + " = "+ (x*x) + 
+                " </h2>");
+       }
+       //생성되어 있는 매개 변수보다 전달인수의 갯수가 많으면 해당 전달인수는 무시됩니다.
+
+       //갯수가 정해지지 않은 전달인수의 사용
+       
+       //자바에서 갯수를 정하지 않고, 불특정 다수의 전달인수를 수용할 수 있는 매개변수
+    //    public static void abc(int ... c){
+
+    //    }
+    // abc(10, 230, 30, 4, 05, 30);
+        function sumAll() {
+            document.write("<h1>arguments type: " + typeof(arguments) 
+                + " , length " +  arguments.length + " </h1>");
+            var sum = 0;
+            for(var i in arguments){
+                sum = sum + arguments[i];
+                document.write("<h2>" + arguments[i] + "</h2>");
+            }
+            document.write("<h2>sum -> " + sum + "</h2>");
+        };   
+        
+    //함수 사용에 따른 분류 #3 - 매개변수 무관 리턴값 O --------------
+    function add(a, b){
+        var c = a+b;
+        return c;
+    }
+    //함수는 실행의 결과중 선별한 항목을 호출한곳으로 return 명령을 통해서 되돌려 줄 수 있습니다.
+
+    var result = add(10, 20);
+    document.write("<h2>10 + 20 = " + result + "</h2>");
+    document.write("<h2>30 + 50 = " + add(30, 50) + "</h2>");
+    document.write("-------head 출력---------");
+
+    //함수 사용에 따른 분류 #4  --------------
+    //함수를 전달인수로, 함수를 return값으로 
+    //#4-1 리턴값이 익명함수인 경우
+    function returnFunc(){
+        var f = function(){
+            document.write("<h1>리턴된 함수가 실행됩니다.</h1>");
+        }
+        return f;
+        //함수를 리턴합니다.
+    }
+    var returnVal = returnFunc(); //리턴값을 변수에 저장합니다.
+    returnVal(); //리턴된 익명함수를 변수에 저장했으니, 변수에()를 붙여서 저장된 함수를 호출합니다.
+
+    //#4-2 익명함수를 함수의 전달인수로 전달되는 경우
+    function varFunction(vf){
+        for(var i=0; i<5; i++)
+            vf(); //매개변수에 전달된 함수를 호출
+    }
+
+    var func5 = function(){
+        document.write("<h3>Hello JavaScript...!</h3>");
+    }
+    varFunction(func5);
+
+    //실습 : 두개의 정수를 입력 받아서 각각 합계, 차, 곱, 나누기 결과를 리턴하는 함수를 생성하세요
+    var f1 = function(a, b){
+        return a+b;
+    }
+    var f2 = function(a, b){
+        return a-b;
+    }
+    var f3 = function(a, b){
+        return a*b;
+    }
+    var f4 = function(a, b){
+        return a/b;
+    }
+
+    //실습2 : 두개의 정수와 함수를 전달해서 두개의 정수를 함수에 맞는 연산이 되고 결과가 리턴되는 함수를 생성하세요.
+    function cal(a, b, func){
+        var c = func(a, b);
+        return c;
+    }
+    var result = cal(75, 35, f1);
+    document.write("<h2>덧셈결과 : " + result + "</h2>");
+    var result = cal(75, 35, f2);
+    document.write("<h2>뺄셈결과 : " + result + "</h2>");
+    var result = cal(75, 35, f3);
+    document.write("<h2>곱셈결과 : " + result + "</h2>");
+    var result = cal(75, 35, f4);
+    document.write("<h2>나눗셈결과 : " + result + "</h2>");
+    </script>
+</head>
+<body>
+    <script type="text/JavaScript">
+        func1();
+        func2(10, 30); //10, 30 전달인수
+        var a = 10;
+        var b = 20;
+        document.write("<h2>a : " + a + ", b : " +  b + " </h2>");
+        func3(a, b); //call by value - 지역변수 값 전달. 참조 변수 나중에 구분 잘해야함.
+        document.write("<h2>a : " + a + ", b : " +  b + " </h2>");
+        square(5, 3);
+        sumAll(1, 2, 3, 4, 5);
+    </script>
+</body>
+</html>

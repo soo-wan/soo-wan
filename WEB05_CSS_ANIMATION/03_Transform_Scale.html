@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .origin{
+            width: 210px; 
+            height: 200px;
+            border:1px solid black;
+            float:left;
+            margin:40px;
+        }
+        .scalex, .scaley, .scale{transition: 1s;}
+        .scale:hover{transform: scale(1.5);} 
+        .scalex:hover{transform: scaleX(1.5);}
+        .scaley:hover{transform: scaleY(1.5);}
+        /* 
+            변형 (애니메이션) 함수(function)
+            4.scale(X,Y) : 지정한 크기만큼 x축과 y축으로 확대 축소
+            5.scaleX(X) : 지정한 크기만큼 x축으로 확대 축소
+            6.scaleY(Y) : 지정한 크기만큼 y축으로 확대 축소
+         */
+    </style>
+</head>
+<body>
+    <div class="origin">
+        <div class="scalex"><img src="images/fruit.jpg"></div>
+    </div>
+    <div class="origin">
+        <div class="scaley"><img src="images/fruit.jpg"></div>
+    </div>
+    <div class="origin">
+        <div class="scale"><img src="images/fruit.jpg"></div>
+    </div> 
+</body>
+</html>

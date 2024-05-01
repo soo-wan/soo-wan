@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javaScript">
+        // 1. 이벤트 연결 #1
+        // 기존 자바스크립트의 이벤트 연결 :
+        //  -태그 안에 onClick 같은 속성을 넣고, 자바스크립트 함수를 연결
+        //  JQuery의 이벤트 연결
+        //  -선택자로 태그를 선택하고, 그 문서객체에 이벤트 함수를 연결하여 실행한다.
+
+        // 사용할 이벤트 함수 : on
+        // 사용 형태
+        // 1) $(selector).on(이벤트 이름, 익명함수);
+        // 해당 문서객체(selector)에 해당 이벤트가 발생하면 익명함수가 실행되는 형식
+
+        // 실제 사용 예
+        $(function(){
+            //h1 태그를 클릭하면 익명함수의 내용이 실행됩니다.
+            // $('h1:eq(0)').on('click', function(){
+            //     $('h1:eq(0)').css({'background':'red', 'color':'white'});
+            // });
+            // $('h1:eq(1)').on('click', function(){
+            //     $('h1:eq(1)').css({'background':'blue', 'color':'white'});
+            // });
+            // $('h1:eq(2)').on('click', function(){
+            //     $('h1:eq(2)').css({'background':'#FF00FF', 'color':'white'});
+            // });
+
+            // $('h1').on('click', function(){
+            //     // 현재 클릭된 h1 -> this
+            //     // 클릭된 h1의 index를 변수에 저장
+            //     var idx = $(this).index();
+            //     if(idx==0)
+            //         $('h1').eq(idx).css({'background':'red', 'color':'white'});
+            //     else if(idx==1)
+            //         $('h1:eq(' + idx + ')').css({'background':'blue', 'color':'white'});
+            //     else
+            //         $('h1:eq(2)').css({'background':'#FF00FF', 'color':'white'});
+            // });
+
+            // 두가지 이벤트를 연결 
+            // $('h1').on ( 'mouseover', function(){} );
+            // $('h1').on ( 'mouseout', function(){} );
+            // $('h1').on('mouseover', function(){
+            //     var idx = $(this).index();
+            //     if(idx==0)
+            //         $('h1').eq(idx).css({'background':'red', 'color':'white'});
+            //     else if(idx==1)
+            //         $('h1:eq(' + idx + ')').css({'background':'blue', 'color':'white'});
+            //     else
+            //         $('h1:eq(2)').css({'background':'#FF00FF', 'color':'white'});
+            // } );
+
+            // $('h1').on('mouseout', function(){
+            //     $(this).css( { 'background' : 'white', 'color':'black'});
+            // });
+
+            // $('h1').on(
+            //     {
+            //         'mouseover' : function(){
+            //             $(this).css({'background':'red', 'color':'white'});
+            //         },
+            //         'mouseout' : function(){
+            //             $(this).css({'background':'white', 'color':'black'});
+            //         }
+            //     }
+            // );
+
+            $('h1').hover(
+                function(){
+                    $(this).css({'background':'red', 'color':'white'});
+                },
+                function(){
+                    $(this).css({'background':'white', 'color':'black'});
+                }
+            );
+
+            // $('h1').click(function(){
+            //     //명령...
+            // });
+
+            // -click : 마우스 클릭 할 때 이벤트 발생
+            // -dbclick : 마우스 더블클릭 할 때 이벤트 발생
+            // -mousedown : 마우스 버튼을 누를 때 이벤트 발생
+            // -mouseup : 마우스 버튼을 뗄 때 이벤트 발생
+            // -mouseenter : 마우스가 요소의 경계 외부에서 내부로 이동할 때 발생
+            // -mouseleave : 마우스가 요소의 경계 내부에서 외부로 이동할 때 발생
+            // -mousemove : 마우스가 움직일 때 발생
+            // -mouseout : 마우스가 요소를 벗어날 때 발생
+            // -mouseover : 마우스가 요소 안에 들어올 때 발생
+
+            // -keydown : 키보드가 눌러질 때 발생
+            // -keypress : 글자가 입력될 때 발생(한글지원x)
+            // -keyup : 키보드가 떼어질 때 발생
+            
+            // $('textarea').on('keyup',function(){});
+            $('textarea').keyup(function(){
+                var inputlength = $(this).val().length; //글자수 추출
+                var remain = 150 - inputlength; //남은 글자수 계산
+                $('h2').html(remain); //남은 글자수 표시
+
+                if (remain >= 0) $('h2').css('color', 'black'); //남은 글자수가 양수이면 검정색
+                else $('h2').css('color', 'red'); //남은 글자수가 음수이면 빨간색
+            });
+
+            //이벤트 제거
+            $('h1').on('click', function(){
+                $(this).html('hover 이벤트 종료');
+                $(this).off(); //이벤트 제거
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p>SMS</p>
+        <textarea cols="70" rows="5"></textarea>
+        <h2>150</h2>
+    </div>
+    <!-- 1/2/3 이벤트 연결/제거 -->
+    <h1>Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1>
+</body>
+</html>

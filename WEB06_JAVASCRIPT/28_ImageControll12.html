@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        img{
+            width: 600px;
+            height: 400px;
+        }
+        .view{
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border : 5px solid blue;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .imgs{
+            position: absolute;
+            width: 4800px;
+            height: 400px;
+            border : 1px solid red;
+            top : 0; left : 0;
+            transition: 0.3s;
+        }  
+        #remote{
+            position: absolute;
+            width: 330px;
+            height: 25px;
+            bottom: 0;
+            left: 125px;
+            border: 1px dotted white;
+            /* text-align: center; */
+            /* line-height: 25px; */
+            /* margin: 0 auto; */
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            margin: 4px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            line-height: 20px;
+            margin: 0 5px; /* 좌우 여백 추가 */
+        }   
+        .btns{
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            float: left;
+        }  
+    </style>
+        
+    <script type="text/JavaScript">
+        //왼쪽 오른쪽
+        var numleftright = 0;
+
+        function moveLeft(){
+            if(numleftright == 0) return; // 이미 맨왼쪽 이미지를 보고 있다면 함수 실행 종료
+            numleftright--;
+            var dist = 600 * numleftright * (-1);
+            document.getElementById("imgs").style.left = dist + 'px';
+        }
+        function moveRight(){
+            if(numleftright == 7) return; // 이미 맨오른쪽 이미지를 보고 있다면 함수 실행 종료
+            numleftright++;
+            var dist = 600 * numleftright * (-1);
+            document.getElementById("imgs").style.left = dist + 'px';
+        }
+
+        //클릭 이동
+        function move(num){
+            var dist = num * 600 * -1;
+            document.getElementById("imgs").style.left = dist + "px";
+            //전체 리모콘 버튼을 회색으로, 전달된 번째 버튼을 검은색으로 변경
+            for(var i=0; i<=7; i++){
+                document.getElementById("btn" + i).style.background = 'white';
+                document.getElementById("btn" + i).style.color = 'black';
+                document.getElementById("btn" + num).style.background = 'black';
+                document.getElementById("btn" + num).style.color = 'white';
+            }
+        }
+
+        // 플레이,정지
+        var state = true; // 현재 자동 플레이중인지를 저장
+        var num = 0;
+        var timer;
+        function moveAuto(){
+            if(state == true ){
+                //버튼 표시글자를 '▶'로 변경
+                document.getElementById("btn").innerHTML = '▶';
+                //interval 멈춤
+                window.clearInterval(timer);
+                //state를 false로 변경
+                state = false;
+            } else {
+                //버튼 표시글자를 '■'로 변경
+                document.getElementById("btn").innerHTML = '■';
+                //interval 재실행
+                timer = window.setInterval( function(){
+                    num++;
+                    if(num > 7) num=0;
+                    var dist = -600 * num;
+                    document.getElementById("imgs").style.left = dist + 'px';
+                }, 1500);
+                //state를 true로 변경
+                state = true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="view">
+        <div class="imgs" id="imgs">
+            <img src="images/Koala.jpg"><img src="images/Chrysanthemum.jpg"><img src="images/Desert.jpg"><img src="images/Penguins.jpg"><img src="images/sunset.jpg"><img src="images/Jellyfish.jpg"><img src="images/Hydrangeas.jpg"><img src="images/Tulips.jpg">
+        </div>
+
+        <div id="remote">
+            <ul>
+                <li onclick="moveLeft();">◁</li>
+                <li id="btn0" onclick="move(0);">1</li>
+                <li id="btn1" onclick="move(1);">2</li>
+                <li id="btn2" onclick="move(2);">3</li>
+                <li id="btn3" onclick="move(3);">4</li>
+                <li id="btn4" onclick="move(4);">5</li>
+                <li id="btn5" onclick="move(5);">6</li>
+                <li id="btn6" onclick="move(6);">7</li>
+                <li id="btn7" onclick="move(7);">8</li>
+                <li onclick="moveRight();">▷</li>
+                <li id="btn" onclick="moveAuto();">■</li>
+            </ul> 
+        </div>
+    </div>
+</body>
+</html>

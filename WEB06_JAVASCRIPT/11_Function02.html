@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+        function test(name){
+            var output = 'Hello ' + name + '..!';
+            return output;
+            // return function(){return output;}; //지역변수를 담은 익명함수가 리턴됩니다.
+        }
+        //위 함수 내의 output변수는 지역변수 이므로, 함수를 벗어나면 없는 변수가 됩니다.
+        // document.write('<h1>' + output +'</h1>');
+        //실행결과 에러 메세지 : output is not defined
+
+        var s = test('홍길동');
+        document.write('<h1>' + s +'</h1>');
+
+        //함수의 재정의 : 함수 호출 전 마지막에 저장된 함수가 실행됩니다.
+        //1. 익명함수의 재정의
+        var func = function(){document.write('<h1>익명함수1</h1>');}
+        func(); //익명함수1
+        var func = function(){document.write('<h1>익명함수2</h1>');}
+        func(); //익명함수2
+        var func = function(){document.write('<h1>익명함수3</h1>');}
+        func(); //익명함수3
+        //익명함수는 변수에 익명함수가 저장되는 시점에 변수의 이름으로 함수가 정의되듯 실행결과를 갖을수 있게 만들어집니다.
+
+        //2.선언적 함수의 재정의
+        function move() {document.write('<h1>move() 함수1 호출</h1>');}
+        move();
+        function move() {document.write('<h1>move() 함수2 호출</h1>');}
+        move();
+        function move() {document.write('<h1>move() 함수3 호출</h1>');}
+        move();
+        //최초 실행시 내부의 실행명령들의 내용을 읽기전에 선언전함수들을 먼저 읽어서 사용준비를 합니다.
+        //그 과정에 같은 이름의 함수가 있따면 나중에 정의된 함수가 그 이름의 함수로 결정됩니다.
+        //따라서 위의 코드의 세번째 move()함수호출 명령은 모두 'move() 함수3 호출' 내용을 출력합니다.
+    </script>
+</head>
+<body>
+    <script type="text/JavaScript">
+        
+    </script>
+</body>
+</html>

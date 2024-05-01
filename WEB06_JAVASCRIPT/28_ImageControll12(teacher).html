@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        img{
+            width: 600px;
+            height: 400px;
+        }
+        .view{
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border : 5px solid blue;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .imgs{
+            position: absolute;
+            width: 4800px;
+            height: 400px;
+            border : 1px solid red;
+            top : 0; left : 0;
+            transition: 0.3s;
+        }  
+        #remote{
+            position: relative; 
+            margin: 0 auto; 
+            width:400px; 
+            height:50px; 
+            top:350px; 
+            border:1px dotted white; 
+            text-align: center; 
+            /* text-align 하려면 아래 display를 inline-block이나 block으로? */
+        }
+        ul{
+            list-style: none;  
+            padding:0; 
+            margin:0; 
+            display: inline-block;
+        }
+        li{
+            float: left; 
+            width:20px; 
+            height:20px; 
+            border-radius: 50%; 
+            background: white; 
+            text-align: center; 
+            font-weight: bold; 
+            margin:15px 4px;
+            cursor: pointer;
+        }
+        /* li:nth-child(2){
+            background: black;
+            color: white;
+        } */
+    </style>
+        
+    <script type="text/JavaScript">
+        var imgNum = 0;
+        var state = false; 
+        var timer;
+
+        //중복 코드 함수 생성
+        function changeCss(num){
+            for(var i=0; i<=7; i++){ //전체 버튼(1~8) 흰배경 검은 글자
+                document.getElementById("btn" + i).style.background = 'white';
+                document.getElementById("btn" + i).style.color = 'black';
+            }
+            //현재 버튼에 검은 배경 흰글자
+            document.getElementById("btn" + (num)).style.background = 'black';
+            document.getElementById("btn" + (num)).style.color = 'white';
+        }
+
+        function moveLeft(){
+            if(state==true) return;
+            if(imgNum == 0) return; 
+            imgNum--;
+            var dist = 600 * imgNum * (-1);
+            document.getElementById("imgs").style.left = dist + 'px';
+            changeCss(imgNum);
+        }
+        function moveRight(){
+            if(state==true) return;
+            if(imgNum == 7) return; 
+            imgNum++;
+            var dist = 600 * imgNum * (-1);
+            document.getElementById("imgs").style.left = dist + 'px';
+            changeCss(imgNum);
+        }
+
+        //클릭 이동
+        function move(x){
+            if(state==true) return;
+            imgNum = x;
+            var dist = -600 * imgNum;
+            document.getElementById("imgs").style.left = dist + "px";
+            changeCss(imgNum);
+        }
+
+        // 플레이,정지
+        function moveAuto(){
+            if(state == true ){
+                state = false;
+                document.getElementById("btn").innerHTML = '▶';
+                window.clearInterval(timer);
+            } else {
+                state = true;
+                document.getElementById("btn").innerHTML = '■';
+                timer = window.setInterval( function(){
+                    imgNum++;
+                    if(imgNum > 7) imgNum=0;
+                    var dist = -600 * imgNum;
+                    document.getElementById("imgs").style.left = dist + 'px';
+                    changeCss(imgNum);
+                }, 1500);
+            }
+        }
+    </script>
+</head>
+<body onload="moveAuto();">
+    <div class="view">
+        <div class="imgs" id="imgs">
+            <img src="images/Koala.jpg"><img src="images/Chrysanthemum.jpg"><img src="images/Desert.jpg"><img src="images/Penguins.jpg"><img src="images/sunset.jpg"><img src="images/Jellyfish.jpg"><img src="images/Hydrangeas.jpg"><img src="images/Tulips.jpg">
+        </div>
+
+        <div id="remote">
+            <ul>
+                <li onclick="moveLeft();">◁</li>
+                <li id="btn0" onclick="move(0);">1</li>
+                <li id="btn1" onclick="move(1);">2</li>
+                <li id="btn2" onclick="move(2);">3</li>
+                <li id="btn3" onclick="move(3);">4</li>
+                <li id="btn4" onclick="move(4);">5</li>
+                <li id="btn5" onclick="move(5);">6</li>
+                <li id="btn6" onclick="move(6);">7</li>
+                <li id="btn7" onclick="move(7);">8</li>
+                <li onclick="moveRight();">▷</li>
+                <li id="btn" onclick="moveAuto();">■</li>
+            </ul> 
+        </div>
+    </div>
+</body>
+</html>

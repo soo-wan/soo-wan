@@ -1,0 +1,44 @@
+.container{
+    width: 300px;
+    height: 300px;
+    border:1px solid black;
+    display: flex; 
+    /* 가로로 바뀜. */
+}
+.box{
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    margin:2px;
+}
+.box:nth-child(1){
+    background-color: red;
+}
+.box:nth-child(2){
+    background-color: blue;
+}
+.box:nth-child(3){
+    background-color: yellowgreen;
+}
+#container1{
+    flex-direction: row;
+    /* 기본이 row 안써도됨. */
+}
+#container2{
+    flex-direction: column;
+    /* column은 반드시 써야함 */
+}
+#container3{
+    flex-direction: row-reverse;
+}
+#container4{
+    flex-direction: column-reverse;
+}
+#container5{
+    flex-direction: column;
+    justify-content: space-between;
+}
+#container6{
+    flex-direction: column;
+    justify-content: space-around;
+}

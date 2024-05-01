@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style type="text/css">
+        span{ 
+            font-size: 180%; 
+            font-weight: bold; 
+            display: none; 
+        }
+    </style>
+
+    <script type="text/javaScript">
+        $(function(){
+            $('button:eq(0)').click(function(){
+                // Show It : span 태그를 배경색 노란색으로 바꾸고 화면에 표시
+                $('span:first').show(1000, function(){
+                    $(this).css("background", "yellow");
+                });
+            });
+
+            $('button:eq(1)').click(function(){
+                $('span:first').hide(1000);
+            });
+
+            $('button:eq(2)').click(function(){
+                $('span:first').toggle(1000, function(){
+                    $(this).css("background", "yellow");
+                });
+            });
+
+            $('button:eq(3)').click(function(){
+                $('span:last').show(2000, function(){
+                    $(this).css("background", "orange");
+                });
+            });
+
+            $('button:eq(4)').click(function(){
+                $('span:last').hide(2000);
+            });
+
+            $('button:eq(5)').click(function(){
+                $('span:last').toggle(2000, function(){
+                    $(this).css("background", "orange");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Show It</button> <!--버튼을 만드는 또 다른 방법-->
+    <button>Hide It</button>
+    <button>Toggle</button>
+    <span>안녕하세요.</span>
+    <br>
+    <button>Show It slow</button>
+    <button>Hide It slow</button>
+    <button>Toggle</button>
+    <span>반갑습내다</span>
+</body>
+</html>

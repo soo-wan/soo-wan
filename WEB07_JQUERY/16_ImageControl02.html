@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javaScript">
+        //첫번째 이미지 : 클릭할때마다 다음 이미지로
+        var imgNum1 = 1;
+        var imgNum2 = 1;
+        var imgNum3 = 1;
+        $(function(){
+            $('img:eq(0)').click(function(){
+                imgNum1++;
+                if(imgNum1>10) imgNum1 = 1;
+                $('img:eq(0)').attr('src', 'images/' + imgNum1 + '.jpg');
+            });
+        });
+        //두번째 이미지 : setInterval을 이용하여 1초에 하나씩 다음 이미지로
+        $(function(){
+            window.setInterval(function(){
+                imgNum2++;
+                if(imgNum2>10) imgNum2 = 1;
+                $('img:eq(1)').attr('src', 'images/' + imgNum2 + '.jpg');
+            }, 1000);
+        });
+        //세번째 이미지 : 두번째와 같이 동작하되 마우스가 올라가면 멈춤, 빠지면 재시작
+        var timer;
+        $(function(){
+            $('img:eq(2)').hover(
+                function(){
+                    window.clearInterval(timer);
+                },
+                function(){
+                    timer = window.setInterval(function(){
+                        imgNum3++;
+                        if(imgNum3>10) imgNum3 = 1;
+                        $('img:eq(2)').attr('src', 'images/' + imgNum3 + '.jpg');
+                    }, 1000);
+                }
+            );
+            //이벤트 강제 발생 명령
+            $('img:eq(2)').trigger('mouseleave');
+        });
+    </script>    
+</head>
+<body>
+    <img src="images/1.jpg">
+    <img src="images/1.jpg">
+    <img src="images/1.jpg">
+</body>
+</html>

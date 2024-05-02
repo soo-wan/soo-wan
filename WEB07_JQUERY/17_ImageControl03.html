@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style type="text/css">
+        #view{
+            position: relative;
+            width: 170px;
+            height: 255px;
+            border: 3px solid blue;
+            left: 50px;
+            overflow: hidden;
+        }
+        #imgs{
+            position: absolute;
+            width: 1700px;
+            height: 255px;
+            left: 0; top: 0;
+            border: 1px dashed red;
+        }
+    </style>
+    <script type="text/javaScript">
+        //1초에 한칸(170px)씩 이동. animate를 이용해주세요
+        //마우스가 올라가면 이동을 멈추고, 마우스가 빠지면 이동을 다시 시작합니다
+        var imgNum = 0;
+        var timer;
+        $(function(){
+            $('#view').hover(
+                function(){
+                    window.clearInterval(timer);
+                },
+                function(){
+                    timer = window.setInterval(function(){
+                        imgNum++;
+                        if(imgNum>9) imgNum = 0;
+                        $('#imgs').animate( {left: imgNum * -170}, 500 );
+                    }, 1000);
+                }
+            );
+            $('#view').trigger('mouseleave');
+        });
+    </script>    
+</head>
+</head>
+<body>
+    <div id="view">
+        <div id="imgs"><img src="images/1.jpg"><img src="images/2.jpg"><img src="images/3.jpg"><img src="images/4.jpg"><img src="images/5.jpg"><img src="images/6.jpg"><img src="images/7.jpg"><img src="images/8.jpg"><img src="images/9.jpg"><img src="images/10.jpg"></div>
+    </div>
+</body>
+</html>

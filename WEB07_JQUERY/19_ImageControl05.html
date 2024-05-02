@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style type="text/css">
+        #view{
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 1px solid black;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        #imgs{
+            position: absolute;
+            width: 4800px;
+            height: 400px;
+            left: 0; top: 0;
+            border: 1px dashed red;
+        }
+        img{width: 600px; height: 400px;}
+        #remote{
+            position: relative;
+            width: 330px;
+            height: 50px;
+            border:1px solid white;
+            top:350px;
+            margin:0 auto;
+        }
+        #remote div{
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            float: left;
+            margin: 15px 4px auto;  
+            border : 1px solid black;
+            text-align: center;
+            line-height: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #remote .selected{
+            background-color: black;
+            color: white;
+            border:1px solid white;
+        }
+    </style>
+    <script type="text/javaScript">
+      $(function(){
+         var imgNum = 0;
+         var timer;
+         var state = false;
+
+         $('#remote div').click(function(){
+            var idx = $(this).index();
+            var dist;
+            if(idx == 0){ //왼쪽 버튼
+                if(imgNum==0) return;
+                imgNum--;
+                dist = -600 * imgNum;
+                $('#imgs').animate({ left : dist }, 500);
+            }else if(idx == 9){ //오른쪽 버튼
+                if(imgNum==7) return;
+                imgNum++;
+                dist = -600 * imgNum;
+                $('#imgs').animate({ left : dist }, 500);
+            }else if(idx == 10){ //자동 버튼
+                if(state==false){ //자동 동작 멈춤 상태
+                    state=true;
+                    $('#remote div:eq(10)').html('■');  
+                    timer = window.setInterval(function(){
+                        imgNum++;
+                        if(imgNum>7) imgNum=0;
+                        dist = -600 * imgNum;
+                        $('#imgs').animate( {left:dist}, 500);
+                        $('#remote div').removeClass('selected');
+                        $('#remote div').eq(imgNum+1).addClass('selected');
+                    }, 1000);
+                } else { //자동 동작 상태
+                    state=false;
+                    $('#remote div:eq(10)').html('▶');    
+                    window.clearInterval(timer);
+                }
+            }else{ 
+                imgNum = idx - 1;
+                dist = -600 * imgNum;
+                $('#imgs').animate({ left : dist}, 500 );
+            }
+            $('#remote div').removeClass('selected');
+            $('#remote div').eq(imgNum+1).addClass('selected');
+         });
+      });
+    </script>    
+</head>
+</head>
+<body>
+    <div id="view">
+        <div id="imgs"><img src="images/Koala.jpg"><img src="images/Chrysanthemum.jpg"><img src="images/Desert.jpg"><img src="images/Hydrangeas.jpg"><img src="images/Jellyfish.jpg"><img src="images/Lighthouse.jpg"><img src="images/Penguins.jpg"><img src="images/Tulips.jpg"></div>
+
+        <div id="remote">
+            <div>◁</div><div class="selected">1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>▷</div><div>▶</div>
+        </div>
+    </div>
+</body>
+</html>

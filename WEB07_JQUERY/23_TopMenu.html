@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        header{
+            background-color: #fff;
+            display: flex;
+            padding: 20px;
+            align-items: center;
+            border-bottom: 2px solid gray;
+        }
+        .logo {flex: 1;}
+        .logo img{
+            flex:1; 
+            width: 150px;
+        }
+        .menu{
+            flex:6; 
+            display: flex;
+            justify-content: center;
+        }
+        .search{flex: 1;}
+        .menu a{
+            text-decoration: none; 
+            margin: 0 20px;
+            font-size: 130%;
+        }
+
+        .hmenu{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border: 3px solid blueviolet;
+            border-radius: 10px;
+            display: none;
+        }
+        .hmenu div{
+            width: 30px;
+            height: 3px;
+            background-color: blueviolet;
+            margin: 10px auto;
+            position: absolute;
+            transition: 0.3s;
+            left:10px;
+        }
+        .hmenu div:nth-child(1){top:5px;}
+        .hmenu div:nth-child(2){top:15px;}
+        .hmenu div:nth-child(3){top:25px;}
+
+        .hmenu div.active:nth-child(1){ transform: rotate(45deg); top:15px; left:10px; }
+        .hmenu div.active:nth-child(2){ display: none; }
+        .hmenu div.active:nth-child(3){ transform: rotate(-45deg); top:15px; left:10px; }
+
+        @media (max-width:768px){
+            header{
+                flex-direction: column; 
+                position: relative;
+                height: 70px;
+            }
+            .logo{
+                position: absolute;
+                left: 10px;
+                top:10px;
+            }
+            .menu{
+                display: none;
+                position: absolute;
+                top:110px;
+                z-index: 10;
+                width: 100%;
+                text-align: center;
+                flex-direction: column;
+                border: 1px solid black;
+                /* display: block; */
+            }
+            .menu a{
+                width: 100%;
+                display: block;
+                margin: 10px 0;
+            }
+            .search{display: none;}
+            .hmenu{
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 25px;
+            }
+            /* .logo{text-align: center;} */
+        }
+
+        @media (min-width:768px){
+            .menu{ 
+                display: flex !important;
+            }
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javaScript">
+        $(function(){
+            $('.hmenu').click(function(){
+                $('.menu').toggle(300, function(){});
+                $('.hmenu div').toggleClass('active');
+            });
+        });
+    </script>    
+</head>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/KakaoTalk_20240502_171121746.png">
+        </div>
+        <div class="menu">
+            <a href="#none">Home</a>
+            <a href="#none">Service</a>
+            <a href="#none">Content</a>
+            <a href="#none">Mypage</a>
+            <a href="#none">Customer</a>
+        </div>
+        <div class="search">
+            <input type="search" placeholder="Search">
+        </div>
+        <div class="hmenu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+</body>
+</html>

@@ -7,49 +7,68 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="script/jquery.innerfade.js"></script>
     <style type="text/css">
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 1080px;
+            height: 480px;
+        }
         #tabs{
             width   : 1080px; 
             height  : 40px;
-            display : flex; 
-            /* 요소들이 수평으로 나란히 배열 */
+            display : flex; /* 요소들이 수평으로 나란히 배열 */
+            
         }
         #tabs div{
             width : 180px;
             height: 40px;
-            /* display: inline-block;  */
             box-sizing: border-box;
             border-radius: 5px 5px 0 0;
             font-size: 120%;
-            text-align: center; /* 가운데 정렬 */
-            line-height: 20px; /* 수직 가운데 정렬 */
-            cursor: pointer; /* 포인터 모양 변경 */
-            margin: 0 auto;
+            cursor: default; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px dashed black;
         }
+
         #content{
-            position: absolute;
-            width : 1200px;
-            height: 600px;
-            top : 50px;
-            left : 300px;
-            border : 3px solid red;
+            position: relative;
+            width : 1080px;
+            height: 440px;
             margin : 0 auto;
-            display: none;
         }
         .contents{
-            width : 1200px;
-            height: 600px;
+            position: absolute;
+            width : 1080px;
+            height: 440px;
+            left : 0px;
+            top : 0px;
+            line-height: 440px;
+            text-align: center;
+            font-size: 120%;
+            /* display: none; */
         }
     </style>
     <script type="text/javaScript">
         $(function(){
-            $('#tabs div:eq(0)').css('background', '#ebaa55');
-            $('#tabs div:eq(1)').css('background', '#55ebd1');
-            $('#tabs div:eq(2)').css('background', '#4fbde3');
-            $('#tabs div:eq(3)').css('background', '#6ebe6d');
-            $('#tabs div:eq(4)').css('background', '#95a096');
-            $('#tabs div:eq(5)').css('background', '#ed8d2a');
+            $('#tabs div:eq(0), #content1').css('background', '#ebaa55');
+            $('#tabs div:eq(1), #content2').css('background', '#55ebd1');
+            $('#tabs div:eq(2), #content3').css('background', '#4fbde3');
+            $('#tabs div:eq(3), #content4').css('background', '#6ebe6d');
+            $('#tabs div:eq(4), #content5').css('background', '#95a096');
+            $('#tabs div:eq(5), #content6').css('background', '#ed8d2a');
             // content 들에 배경색을 탭메뉴와 맞춰주세요
             // 메뉴를 클릭하면 해당 화면이 화면에 보이게 코딩합니다.
+        });
+
+        $(function(){
+            $('#tabs div').click(function(){
+                var idx = $(this).index();
+                var selectDiv = '#content' + (idx+1);
+                $('.contents').hide();
+                $(selectDiv).show();
+            });
         });
     </script>
 </head>

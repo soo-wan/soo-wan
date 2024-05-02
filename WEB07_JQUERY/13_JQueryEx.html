@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <style type="text/css">
+        body{
+            background: royalblue;
+        }
+        a{
+            text-decoration: none;
+            display: block;
+            font-size: 40px;
+            margin: 5px 0;
+            color : #fff;
+            transition: 0.5s;
+        }
+        .gnb{
+            position: absolute;
+            top:100px;
+            left:50px;
+        }
+    </style>
+    <script type="text/javaScript">
+        //메뉴에 마우스가 올라가면 해당 메뉴는 opacity를 1로 변경. 나머지 메뉴는 0.3으로 변경해주세요
+        //메뉴 영역에서 마우스가 완전히 빠져나가면 모든 메뉴의 opacity를 1로 변경해주세요.
+        $(function(){
+            $('a').mouseover(function(){
+                var idx = $(this).index();
+                $('a').css("opacity", "0.3");
+                $('a').eq(idx).css("opacity", "1");
+            });
+
+
+            //마우스 나올때 전체 원복
+            $('.gnb').mouseout(function(){
+                $('a').css("opacity", "1");
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="gnb">
+        <a href="#none">New Arrivals</a>
+        <a href="#none">Summer Collection</a>
+        <a href="#none">Winter Collection</a>
+        <a href="#none">Special offers</a>
+        <a href="#none">Trends</a>
+    </div>
+</body>
+</html>

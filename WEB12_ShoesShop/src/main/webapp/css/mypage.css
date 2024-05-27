@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+.tb{
+   border-top:2px solid blueviolet;
+   border-bottom:2px solid blueviolet;
+   display: flex;
+   flex-direction: column;
+}
+
+
+
+.row{
+   border-bottom:2px dotted blueviolet;
+   display: flex;
+}
+.row:first-child{
+   border-bottom:2px solid blueviolet;
+}
+.row:last-child{
+   border-bottom:none;
+}
+.coltitle{
+   font-weight:bold;
+   flex:1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding:10px 0;
+}
+.col{
+   flex:1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1rem;
+   padding:10px 0;
+}
+.col a{
+   text-decoration: none;
+   font-size: 1rem;
+   font-weight: normal;   
+   color:blueviolet;
+}

@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+a{text-decoration:none;}
+
+.paging{display : flex; justify-content: center; font-size:110%; font-weight: bold; 
+padding:20px 0;}

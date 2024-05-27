@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX01</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style type="text/css">
+        #view{
+            position: relative;
+            width: 900px;
+            height: 400px;
+            border: 1px solid black;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        #imgs{
+            position: absolute;
+            width: 5400px;
+            height: 400px;
+            left: 0; top: 0;
+            /* border: 1px dashed red; */
+        }
+        img{width: 900px; height: 400px;}
+        #remote{
+            position: absolute;
+            width: 300px;
+            height: 100px;
+            border:1px solid white;
+            top:340px;
+            right: 0;
+            margin:0 auto;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 10;
+        }
+        #remote div{
+            position: relative;
+            width: 17px;
+            height: 17px;
+            background: white;
+            border-radius: 50%;
+            margin: 15px 4px auto;  
+            border : 1px solid black;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #remote .selected{
+            width:50px;
+            border-radius: 25%;
+            color: white;
+            border:1px solid white;
+        }
+
+        #viewNum{
+            position: absolute;
+            top:10px;
+            right: 10px;   
+            color: white;        
+            font-weight: bold;
+            font-size: 120%;
+        }
+
+        .contents1, .contents2, .contents3, 
+        .contents4, .contents5, .contents6 { 
+            width: 900px;
+            height: 100px;
+            top:400px;
+            position: absolute;
+            background-color: black;
+        }
+        
+        #viewContent{
+            position:relative;
+            width:900px;
+            height:100px;
+            top:400px;
+            box-sizing: border-box;
+            background-color: black;
+        }
+        /* .contents{
+            
+        } */
+
+        #viewContent .title{
+            color: white;
+            width: 900px;
+            height: 50%;
+            line-height: 50px;
+            font-size: 120%;
+            font-weight: bold;
+            text-align: left;
+            margin: 0 auto;
+            margin-left: 50px;
+            margin-bottom: 0px;
+        }
+        #viewContent .text{
+            color: white;
+            width: 500px;
+            height: 50%;
+            margin: 0 auto;
+            font-size: 90%;
+            margin-left: 50px;
+        }
+
+    </style>
+    <script type="text/javaScript">
+      $(document).ready(function(){
+         var imgNum = 0;
+         var timer;
+
+         timer = window.setInterval(function(){
+            imgNum++;
+            if(imgNum>5) imgNum=0;
+            dist = -900 * imgNum;
+            $('#imgs').animate( {left:dist}, 1000);
+            $('#remote div').removeClass('selected');
+            $('#remote div').eq(imgNum).addClass('selected');
+            $('#viewNum').html((imgNum + 1) + '/6'); 
+            
+            // $('.contents'+(imgNum+1)).animate( {top: -100}, 500 );
+            // $('.contents'+(imgNum+1)).animate( {top: +100}, 4000 );
+            
+            $('.contents'+(imgNum+1)).animate({ top: -100 }, 500, function() {
+                $(this).delay(3000).fadeOut(500);
+            });         
+
+        }, 3000);
+
+          $('.contents'+(imgNum+1)).animate({ top: -100 }, 500, function() {
+                $(this).delay(3000).fadeOut(500);
+            });
+          $('#viewNum').html((imgNum + 1) + '/6');
+      });
+    </script>    
+</head>
+</head>
+<body>
+     <div id="view">
+        <div id="imgs"><img src="images/Desert.jpg"><img src="images/Tulips.jpg"><img src="images/Jellyfish.jpg"><img src="images/Lighthouse.jpg"><img src="images/Chrysanthemum.jpg"><img src="images/Koala.jpg"></div>
+
+        <div id="remote">
+            <div class="selected"></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div id="viewNum"></div>
+        <div id="viewContent">
+            <div class="contents1">
+                <div class="title">First Image</div>
+                <div class="text">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                </div>
+            </div>
+            <div class="contents2">
+                <div class="title">Second Image</div>
+                <div class="text">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                </div>
+            </div>
+            <div class="contents3">
+                <div class="title">Third Image</div>
+                <div class="text">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                </div>
+            </div>
+            <div class="contents4">
+                <div class="title">Forth Image</div>
+                <div class="text">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                </div>
+            </div>
+            <div class="contents5">
+                <div class="title">Fifth Image</div>
+                <div class="text">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                </div>
+            </div>
+            <div class="contents6">
+                <div class="title">Sixth Image</div>
+                <div class="text">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

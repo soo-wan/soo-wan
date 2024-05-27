@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+#wrap{width:100%; margin: 0 auto; border: 1px solid red;
+max-width : 1024px; display:flex; flex-direction: column;}
+
+a{text-decoration: none;}
+
+article{
+   /*border:2px solid dimgray;
+   margin:2px;*/
+   flex:4;
+   display: flex;
+   
+}
+
+article form{
+   flex:1;
+   /*border:2px solid red;
+   margin:2px;*/
+   display: flex;
+   flex-direction: column;
+}
+
+article form h2{
+   margin:0;
+   margin-bottom:20px;
+   font-weight: normal;
+   font-size: 28px;
+}
+
+article form{padding:10px;}
+
+article form .field{
+   display: flex;
+   margin:10px 0;
+}
+article form .field label{
+   flex:1;
+}
+article form .field input{
+   flex:4;
+   padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #AAA;
+}
+
+article form .field div{
+   flex:4;
+   display: flex;
+}
+article form .field div input[type=text]{
+   flex:4;
+}
+article form .field div input[type=button]{
+   flex:1;
+}
+
+article form .btn{
+   flex:1;
+   display: flex;
+   margin:10px 0;
+}
+article form .btn input{
+   flex:1;
+   margin:10px 3px;
+   background-color: blueviolet;
+   border:none;
+   color:white;
+   border-radius: 5px;
+   padding:10px 0;
+}
+
+article form div .btn{
+	margin : 10px 0;
+	background-color: blueviolet;
+	color:white;
+	border:none;
+	font-size: 90%;
+}
+
+article form p{
+	flex:1;
+	margin:10px 0;
+}
+
+header{ width : 100%; margin-bottom: 30px;}
+#logo{ width : 100%; display : flex; justify-content: space-between; 
+align-items: center; }
+#logo img{ vertical-align: middle; }
+#logo input{padding:5px; font-weight: bold;
+font-size: 120%; }
+
+#sub_menu{ display:flex; justify-content: space-between;
+align-items: center; margin-bottom: 30px;}
+#sub_menu div{ flex:1; text-align: center; padding:10px; 
+border:1px dotted blue; margin:3px;}
+#sub_menu div a{ font-size:120%; font-weight: bold; 
+text-decoration: none; }
+
+.tb{ width:100%; display: flex; flex-direction: column; margin-bottom: 30px;}
+.row{ display: flex;}
+.coltitle{ flex:1; background: blueviolet; margin:1px; padding:10px; color:white; text-align: center;}
+.col{ flex:1; border : 1px dotted blueviolet; margin:1px; padding:10px; text-align: center;}
+
+/* 합친게 12를 넘으면 안됨. */
+.coltitle:nth-child(1), .col:nth-child(1) { flex:1 }
+.coltitle:nth-child(2), .col:nth-child(2) { flex:4 }
+.coltitle:nth-child(3), .col:nth-child(3) { flex:1;}
+.coltitle:nth-child(4), .col:nth-child(4) { flex:1;}
+.col:nth-child(3), .col:nth-child(4){ text-align: right; }
+.coltitle:nth-child(5), .col:nth-child(5) { flex:2 }
+.coltitle:nth-child(6), .col:nth-child(6) { flex:1 }
+
+footer{ width:100%; }
+footer div{ font-size:110%; }

@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+#wrap{width:1024px; margin: 0 auto; border: 1px solid red;}
+
+header{
+	width:100%;
+	display:flex;
+	flex-direction: column;
+	border: 2px dotted blue;
+}
+
+#top_menu{
+	display: flex;
+	justify-content:space-between;
+	border:1px solid black;
+}
+#logo{flex:1;}
+.gnb{ 
+	flex:5;
+	display:flex;
+	justify-content: flex-end;
+	align-items:center;
+	background-color: white;
+	border:1px solid green;	
+}
+.gnb a{
+		text-decoration: none;
+		margin-left:20px;
+		font-family: Verdana;
+		color:blueviolet;
+		font-weight: bold;
+}
+
+#category_menu{
+	display:flex;
+	justify-content:space-between;
+	padding:30px;
+	background-color:blueviolet;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	
+}
+#category_menu a{
+	text-decoration: none;
+	color:white;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size:1.2em;
+}
+
+.hmenu{
+	width:50px;
+	height:50px;
+	border: 3px solid blueviolet;
+	border-radius: 10px;
+	display:none;
+}
+
+.hmenu div{
+	width:30px;
+	height:3px;
+	background-color: blueviolet;
+	margin:10px auto;
+	position:absolute;
+	left:10px;
+}
+.hmenu div:nth-child(1){ top:5px; }
+.hmenu div:nth-child(2){ top:15px; }
+.hmenu div:nth-child(3){ top:25px; }
+
+#main_img{
+	flex:1;
+	border-radius:20px 20px 20px 20px;
+	overflow: hidden;
+	display:flex;
+	border:1px solid blueviolet;
+}
+
+#main_img img{
+	width:100%;
+	height:350px;
+}
+
+.hmenu div.active:nth-child(1){
+   transform: rotate(45deg);    top:15px;    left:10px;
+}
+.hmenu div.active:nth-child(2){
+   display:none;
+}
+.hmenu div.active:last-child{
+   transform: rotate(-45deg);    top:15px;    left:10px;
+}
+
+@media (min-width:1024px){
+   .gnb{
+      display: flex !important;
+   }
+}
+
+@media (min-width:600px) and (max-width:1024px){
+   #wrap{
+      width:100%;
+   }
+   
+   #main_img img{
+      width:100%;
+   }
+   
+   .gnb{
+      display: flex !important;
+   }
+}
+
+@media (max-width:600px){
+   #wrap{
+      width:100%;
+   }
+   
+   #main_img img{
+      width:100%;
+   }
+   #top_menu{
+      flex-direction: column; 
+      position: relative;
+      height:100px;
+   }
+   #logo{
+      position: absolute;
+      left:0;
+   }
+   .gnb{
+      display: none;
+      position: absolute;
+      top:100px;
+      z-index: 10;
+      width: 100%;
+      text-align: center;
+   }
+   .gnb a{
+      display: block;
+      width:100%;
+      text-align: center;
+      margin:5px;
+   }
+   .hmenu{
+      display:block;
+      position: absolute;
+      right:0;
+      top:25px;
+   }
+   #main_img img{
+      width:100%;
+   }
+   
+   #category_menu a{ 
+      font-size:0.9em;
+   }
+}
+
+
+
